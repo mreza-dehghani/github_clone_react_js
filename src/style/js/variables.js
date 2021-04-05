@@ -25,6 +25,12 @@ export default {
 		Boulder: '#7A7A7A',
 		Silver: '#CDCDCD',
 		DarkGray: '#313131',
+		Success: '#38a169',
+		Primary: '#1e42d3',
+		Danger: '#e53e3e',
+		Warning: '#F2A83B',
+		LightBlue: '#90cdf4',
+		LightSuccess: '#9ae6b4',
 	},
 	fontSize: {
 		ss: '0.5rem',

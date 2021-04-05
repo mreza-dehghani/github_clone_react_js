@@ -5,6 +5,7 @@ import { History } from '../../helper/history';
 import Routes from '../../router';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
+import '../../style/global/index.css';
 
 export default () => {
 	const layoutManage = (item, key) => {
