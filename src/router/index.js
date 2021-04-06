@@ -1,4 +1,4 @@
-import { PrivateRoute } from './private';
-import { PublicRoute } from './public';
+import { privateRoute } from './private';
+import { publicRoute } from './public';
 
-export default PublicRoute.concat(PrivateRoute);
+export default publicRoute.concat(privateRoute);

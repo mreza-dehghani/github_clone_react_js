@@ -1,21 +1,15 @@
-import { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router';
 import { Container, LoginBox, LoginBoxContainer, Title } from './style';
 import Form from './form';
 import { ActionAuth } from '../../../actions';
+import { useEffect } from 'react';
+import { clearLocalStorage } from '../../../helper/localStorage';
 
 const Login = props => {
 	const { loginLoading, login } = props;
 
 	useEffect(() => {
-		// login('mreza-dehghani');
-		// fetch('https://api.github.com/users/mreza-dehghani')
-		// 	.then(response => {
-		// 		console.log(response);
-		// 		response.json();
-		// 	})
-		// 	.then(result => console.log(result));
+		clearLocalStorage();
 	}, []);
 
 	const submit = username => {
@@ -28,7 +22,7 @@ const Login = props => {
 				<Title>Login</Title>
 				<LoginBox>
 					<div className="login-form-wrapper">
-						<Form submit={username => submit(username)} />
+						<Form submit={username => submit(username)} loading={loginLoading} />
 					</div>
 				</LoginBox>
 			</LoginBoxContainer>
@@ -48,4 +42,4 @@ const mapDispatchToProps = dispatch => {
 	};
 };
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Login));
+export default connect(mapStateToProps, mapDispatchToProps)(Login);

@@ -5,18 +5,19 @@
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constants/actionTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/actionTypes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/apis/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/apis/auth.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/app/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/app/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/auth/login/form/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/auth/login/form/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/auth/login/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/auth/login/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/auth/login/style.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/auth/login/style.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/helper/localStorage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/helper/localStorage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layout/public/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layout/public/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/home/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/home/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/helper/apiCaller.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/helper/apiCaller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/helper/history.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/helper/history.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/reducers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/router/private.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/private.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sagas/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sagas/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/style/helper.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/js/helper.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/style/variables.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/js/variables.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/router/public.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/public.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sagas/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sagas/auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -77,7 +78,10 @@
       <workItem from="1617393427562" duration="3250000" />
       <workItem from="1617477534803" duration="6760000" />
       <workItem from="1617485357940" duration="13000" />
-      <workItem from="1617624575682" duration="13555000" />
+      <workItem from="1617624575682" duration="14176000" />
+      <workItem from="1617687310313" duration="9000" />
+      <workItem from="1617688619188" duration="614000" />
+      <workItem from="1617727544861" duration="9207000" />
     </task>
     <servers />
   </component>
