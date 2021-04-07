@@ -1,5 +1,10 @@
-import {Header } from '../../style'
+import { Header } from '../../style';
+import Navbar from './navbar';
 
 export default () => {
-	return <Header>header</Header>
-}
+	return (
+		<Header>
+			<Navbar />
+		</Header>
+	);
+};

@@ -3,8 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="550a7884-7dc4-4681-931e-128dca2ef94d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layout/dashboard/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layout/dashboard/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/button/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/button/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/button/style.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/button/style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/formElements/style.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/formElements/style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/auth/login/style.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/auth/login/style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/dashboard/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/dashboard/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layout/dashboard/components/header/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layout/dashboard/components/header/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layout/dashboard/style.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layout/dashboard/style.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/style/global/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/global/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/style/js/helper.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/helper/style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/style/js/variables.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/styleVariables.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +56,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\SarandKala\projects\private\github_clone_reactjs\src\helper" />
+      <recent name="C:\Users\SarandKala\projects\private\github_clone_reactjs\src\constants" />
       <recent name="C:\Users\SarandKala\projects\private\test\src\style\js" />
       <recent name="C:\Users\SarandKala\projects\private\test\src\style\global" />
       <recent name="C:\Users\SarandKala\projects\private\test\src\containers\app" />

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import variables from '../../style/js/variables';
+import variables from '../../constants/styleVariables';
 
 export const ButtonWrapper = styled.div`
 	cursor: pointer;
@@ -39,7 +39,7 @@ export const ButtonWrapper = styled.div`
 			case 'secondary-outline':
 				return `
 				background-color: ${variables.colors.white};
-				color: ${variables.colors.Gray};
+				color: ${variables.colors.black};
 				border: 1px solid ${variables.colors.Gray};
 			`;
 			case 'warning-outline':
@@ -62,11 +62,11 @@ export const ButtonWrapper = styled.div`
 		switch (props.size) {
 			case 'sm':
 				return `
-					padding: 8px 23px;
+					padding: 5px 9px;
 					font-size: ${variables.fontSize.xs};
-					font-weight: ${variables.fontWeight.medium};
-					border-radius: 20px;
-					width: 124px;
+					font-weight: ${variables.fontWeight.semibold};
+					border-radius: 8px;
+					width: 134px;
 					height: 20px;
 				`;
 			case 'md':
