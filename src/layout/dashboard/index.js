@@ -1,14 +1,17 @@
 import React, { Suspense } from 'react';
+import Header from './components/header';
+import { Container } from './style';
 
 export default ({ Component, route }) => {
 	return (
 		<div>
-			<header>dashboard layout</header>
-			<aside>sidebar</aside>
+			<Header />
 			<main>
-				<Suspense fallback={<div>Loading ...</div>}>
-					<Component route={route} />
-				</Suspense>
+				<Container>
+					<Suspense fallback={<div>Loading ...</div>}>
+						<Component route={route} />
+					</Suspense>
+				</Container>
 			</main>
 		</div>
 	);
