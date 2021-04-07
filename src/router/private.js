@@ -1,5 +1,5 @@
 import React from 'react';
 
-const Home = React.lazy(() => import('../containers/home'));
+const Dashboard = React.lazy(() => import('../containers/dashboard'));
 
-export const privateRoute = [{ path: '/:username', component: Home, layout: 'dashboard' }];
+export const privateRoute = [{ path: '/:username', component: Dashboard, layout: 'dashboard' }];

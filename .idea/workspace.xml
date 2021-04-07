@@ -2,23 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="550a7884-7dc4-4681-931e-128dca2ef94d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/apis/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/apis/auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/app/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/app/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/auth/login/form/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/auth/login/form/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/auth/login/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/auth/login/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/home/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/home/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/helper/apiCaller.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/helper/apiCaller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/helper/history.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/helper/history.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/home/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/dashboard/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/router/private.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/private.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/router/public.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/public.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sagas/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sagas/auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
