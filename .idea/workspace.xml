@@ -2,8 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="550a7884-7dc4-4681-931e-128dca2ef94d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/apis/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/apis/auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/app/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/app/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/auth/login/form/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/auth/login/form/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/auth/login/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/auth/login/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/home/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/home/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/helper/apiCaller.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/helper/apiCaller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/helper/history.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/helper/history.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/router/private.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/private.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/router/public.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/public.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sagas/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sagas/auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,6 +28,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="CSS File" />
         <option value="JavaScript File" />
       </list>
     </option>
@@ -32,6 +48,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -45,6 +62,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\SarandKala\projects\private\test\src\style\js" />
+      <recent name="C:\Users\SarandKala\projects\private\test\src\style\global" />
       <recent name="C:\Users\SarandKala\projects\private\test\src\containers\app" />
     </key>
   </component>
@@ -59,7 +78,10 @@
       <workItem from="1617393427562" duration="3250000" />
       <workItem from="1617477534803" duration="6760000" />
       <workItem from="1617485357940" duration="13000" />
-      <workItem from="1617624575682" duration="982000" />
+      <workItem from="1617624575682" duration="14176000" />
+      <workItem from="1617687310313" duration="9000" />
+      <workItem from="1617688619188" duration="614000" />
+      <workItem from="1617727544861" duration="9207000" />
     </task>
     <servers />
   </component>

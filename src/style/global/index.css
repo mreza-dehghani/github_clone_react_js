@@ -1,0 +1,27 @@
+@font-face {
+    font-family: GiloryLight;
+
+    src: url('../../assets/font/Gilroy-Light.ttf');
+}
+
+@font-face {
+    font-family: GiloryMedium;
+
+    src: url('../../assets/font/Gilroy-Medium.ttf');
+}
+
+@font-face {
+    font-family: GiloryBold;
+
+    src: url('../../assets/font/Gilroy-Bold.ttf');
+}
+
+@font-face {
+    font-family: GiloryExtraBold;
+
+    src: url('../../assets/font/Gilroy-ExtraBold.ttf');
+}
+
+body {
+    font-family: GiloryLight;
+}

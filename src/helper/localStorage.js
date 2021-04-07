@@ -22,25 +22,25 @@ export const getLocalStorageWithExpiry = key => {
 
 export const setLocalStorage = (key, value) => {
 	if (!key) {
-		throw Error 'key is required!'
+		throw 'key is required!';
 	} else {
-		localStorage.setItem(key, JSON.stringify(value))
+		localStorage.setItem(key, JSON.stringify(value));
 	}
-}
+};
 
-export const getLocalStorage = (key) => {
-	const item = localStorage.getItem(key)
+export const getLocalStorage = key => {
+	const item = localStorage.getItem(key);
 	if (!item) {
-		return null
+		return null;
 	} else {
-		return JSON.parse(item)
+		return JSON.parse(item);
 	}
-}
+};
 
 export const clearLocalStorage = (key = null) => {
 	if (!key) {
-		localStorage.clear()
+		localStorage.clear();
 	} else {
-		localStorage.removeItem(key)
+		localStorage.removeItem(key);
 	}
-}
+};

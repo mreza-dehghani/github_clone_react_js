@@ -9,16 +9,13 @@ export const ApiCaller = config => {
 	}
 
 	const axiosInstance = axios.create({
-		headers: {
-			'Content-Type': 'application/json-patch+json',
-			'Access-Control-Allow-Origin': '*',
-		},
+		headers: {},
 		responseType: 'json',
 	});
 
 	axiosInstance.interceptors.request.use(
 		config => {
-			const token = getLocalStorageWithExpiry('token');
+			const token = getLocalStorage('userToken');
 
 			if (needToken && !token) {
 				History.replace('/login');
