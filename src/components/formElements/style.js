@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import variables from '../../style/js/variables';
-import { pxToRem } from '../../style/js/helper';
+import variables from '../../constants/styleVariables';
+import { pxToRem } from '../../helper/style';
 
 export const FormLabelElement = styled.div`
 	width: 100%;

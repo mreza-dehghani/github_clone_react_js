@@ -6,10 +6,9 @@ export default ({ children, type, onClick, size, loading = false, disabled, clas
 		<ButtonWrapper
 			disabled={disabled}
 			onClick={disabled ? () => false : onClick}
-			className={`no-select`}
+			className={`no-select ${classes}`}
 			type={type}
 			size={size}
-			className={classes}
 		>
 			{loading ? (
 				<div>
