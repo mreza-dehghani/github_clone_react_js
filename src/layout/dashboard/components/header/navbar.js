@@ -12,7 +12,7 @@ export default () => {
 							<li className="header-navbar-list-item">
 								<NavLink
 									key={key}
-									exact
+									exact={true}
 									to={navItem.path}
 									className="header-navbar-list-item-link"
 									activeClassName=""
@@ -38,21 +38,21 @@ const navlist = [
 	{
 		id: 0,
 		title: 'Pull requests',
-		path: '/',
+		path: '/pulls',
 	},
 	{
 		id: 1,
 		title: 'Issues',
-		path: '/',
+		path: '/issues',
 	},
 	{
 		id: 2,
 		title: 'Marketplace',
-		path: '/',
+		path: '/marketplace',
 	},
 	{
 		id: 3,
 		title: 'Explore',
-		path: '/',
+		path: '/explore',
 	},
 ];

@@ -3,16 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="550a7884-7dc4-4681-931e-128dca2ef94d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/formElements/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/formElements/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/app/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/app/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/dashboard/style.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/dashboard/style.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layout/dashboard/components/header/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layout/dashboard/components/header/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layout/dashboard/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layout/dashboard/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layout/dashboard/style.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layout/dashboard/style.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/style/global/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/global/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/dashboard/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/dashboard/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layout/dashboard/components/header/navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layout/dashboard/components/header/navbar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/router/private.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/private.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sagas/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sagas/auth.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +74,7 @@
       <workItem from="1617727544861" duration="9207000" />
       <workItem from="1617821892985" duration="1227000" />
       <workItem from="1617858318968" duration="11000" />
-      <workItem from="1617899872153" duration="8351000" />
+      <workItem from="1617899872153" duration="11945000" />
     </task>
     <servers />
   </component>

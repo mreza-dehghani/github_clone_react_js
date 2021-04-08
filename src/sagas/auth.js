@@ -21,7 +21,7 @@ function* workerLogin(action) {
 		setLocalStorage('userToken', data.node_id, process.env.EXPIRY_TOKEN_TIME);
 		yield put(ActionAuth.loginSuccess(data));
 		if (response.status !== 404 && response.status === 200) {
-			History.replace(`/${data.login}`);
+			History.replace(`/user/${data.login}`);
 		}
 	} catch (error) {
 		if (error) {

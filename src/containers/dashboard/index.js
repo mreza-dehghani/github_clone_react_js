@@ -9,9 +9,9 @@ export default () => {
 	const username = router.username;
 
 	useEffect(() => {
-		// return fetch(`https://api.github.com/issues`)
-		// 	.then(res => res.json())
-		// 	.then(result => console.log(result));
+		return fetch(`https://api.github.com/users/mreza-dehghani/repos`)
+			.then(res => res.json())
+			.then(result => console.log(result));
 	}, []);
 
 	return (
