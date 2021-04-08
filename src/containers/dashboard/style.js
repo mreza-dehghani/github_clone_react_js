@@ -64,4 +64,5 @@ export const Main = styled.div`
 	width: ${pxToRem(850)}rem;
 	background-color: red;
 	margin: ${pxToRem(10)}rem;
+	height: 1000px;
 `;
