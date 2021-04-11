@@ -3,12 +3,23 @@ import { pxToRem } from '../../helper/style';
 import variables from '../../constants/styleVariables';
 
 export const Wrapper = styled.div`
-	width: ${pxToRem(270)}rem;
-	height: ${pxToRem(50)}rem;
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
 	padding: ${pxToRem(5)}rem ${pxToRem(6)}rem;
+	height: ${pxToRem(50)}rem;
+	${props => {
+		switch (props.styleType) {
+			case 'pure':
+				return `
+					width: 100%;
+				`;
+			default:
+				return `
+					width: ${pxToRem(270)}rem;
+				`;
+		}
+	}}
 `;
 
 export const SearchInput = styled.input`
@@ -16,13 +27,26 @@ export const SearchInput = styled.input`
 	font-size: ${variables.fontSize.sm};
 	font-weight: ${variables.fontWeight.normal};
 	padding: ${pxToRem(5)}rem ${pxToRem(6)}rem;
-	border: 1px solid ${variables.colors.DustyGray};
 	border-radius: ${pxToRem(6)}rem;
 	margin: ${pxToRem(10)}rem 0;
-	box-shadow: 0 0 1px ${variables.colors.Silver};
-	background-color: ${variables.colors.black};
-	color: ${variables.colors.Silver};
 	&:focus {
 		outline: none;
 	}
+	${props => {
+		switch (props.styleType) {
+			case 'pure':
+				return `
+					background-color: ${variables.colors.white};
+					color: ${variables.colors.black};
+					border: 1px solid ${variables.colors.AthensGray};
+				`;
+			default:
+				return `
+					background-color: ${variables.colors.black};
+					color: ${variables.colors.Silver};
+					border: 1px solid ${variables.colors.DustyGray};
+					box-shadow: 0 0 1px ${variables.colors.Silver};
+				`;
+		}
+	}}
 `;
