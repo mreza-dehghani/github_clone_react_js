@@ -1,17 +1,20 @@
 import { NavLink } from 'react-router-dom';
 import { Avatar, Dropdown } from '../../style';
 import dropdownItems from './dropdownItems';
+import avatar from '../../../../assets/img/avatar.svg';
 
-export default ({ show }) => {
+export default ({ show, toggle, userInfo }) => {
 	return (
 		<Avatar>
-			<img src="" alt="avatar" className="header-avatar-image" />
-			<i className="fa fa-caret-down header-angle-icon" />
+			<div onClick={toggle}>
+				<img src={userInfo?.avatar || avatar} alt="avatar" className="header-avatar-image mr-1" />
+				<i className="fa fa-caret-down header-angle-icon" />
+			</div>
 			{show && (
 				<Dropdown>
 					<div className="dropdown-item-header">
 						<div className="dropdown-item-header-title">Signed in as</div>
-						<div className="dropdown-item-header-username">mohammadreza</div>
+						<div className="dropdown-item-header-username">{userInfo?.fullName}</div>
 					</div>
 					<div className="dropdown-item-list">
 						{dropdownItems &&

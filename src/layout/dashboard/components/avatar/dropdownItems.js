@@ -2,21 +2,21 @@ export default [
 	{
 		id: 0,
 		path: '/',
-		name: 'Test',
+		name: 'Your profile',
 	},
 	{
 		id: 1,
 		path: '/',
-		name: 'Test',
+		name: 'Your repositories',
 	},
 	{
 		id: 2,
 		path: '/',
-		name: 'Test',
+		name: 'Your projects',
 	},
-	{
-		id: 3,
-		path: '/',
-		name: 'Test',
-	},
+	// {
+	// 	id: 3,
+	// 	path: '/',
+	// 	name: 'Your repository',
+	// },
 ];

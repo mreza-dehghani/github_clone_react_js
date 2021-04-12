@@ -25,16 +25,16 @@
 
 
 body {
-    font-family: GiloryLight;
-    padding: 0;
-    margin: 0;
-    background-color: #F0F0F9;
+    font-family: GiloryLight !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background-color:  #F0F0F9 !important;
 }
 
 ul {
-    list-style-type: none;
+    list-style-type: none !important;
 }
 
 a {
-    text-decoration: none;
+    text-decoration: none !important;
 }

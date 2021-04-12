@@ -21,7 +21,12 @@ export const Header = styled.div`
 	position: fixed;
 	right: 0;
 	top: 0;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	z-index: 999;
 	.header-container {
+		width: 100%;
 		max-width: ${pxToRem(1450)}rem;
 		display: flex;
 		justify-content: flex-start;
@@ -91,6 +96,7 @@ export const Avatar = styled.div`
 	.header-avatar-image {
 		width: ${pxToRem(35)}rem;
 		height: ${pxToRem(35)}rem;
+		border-radius: 50%;
 	}
 `;
 
@@ -106,7 +112,7 @@ export const Dropdown = styled.div`
 	right: 0;
 	width: ${pxToRem(180)}rem;
 	border-radius: ${pxToRem(8)}rem;
-	box-shadow: 0 0 30px ${variables.colors.Turquoise};
+	box-shadow: 0 10px 30px ${variables.colors.WhiteLilac[0]};
 	background-color: ${variables.colors.white};
 	.header-avatar-image {
 		width: ${pxToRem(35)}rem;

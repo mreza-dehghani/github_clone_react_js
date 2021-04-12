@@ -4,7 +4,8 @@ import Searchbar from '../../../../components/searchbar';
 import Avatar from '../avatar';
 import Create from '../create';
 
-export default () => {
+export default props => {
+	const { toggleDropdown, showDropdown, userInfo } = props;
 	return (
 		<Header>
 			<div className="header-container">
@@ -12,8 +13,8 @@ export default () => {
 				<Searchbar placeholder="search" onChange={e => console.log(e)} />
 				<Navbar />
 				<div className="header-avatar-wrapper">
-					<Create />
-					<Avatar />
+					{/*<Create />*/}
+					<Avatar toggle={toggleDropdown} show={showDropdown} userInfo={userInfo} />
 				</div>
 			</div>
 		</Header>

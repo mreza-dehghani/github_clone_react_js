@@ -67,7 +67,7 @@ export const ButtonWrapper = styled.div`
 					font-weight: ${variables.fontWeight.semibold};
 					border-radius: 8px;
 					width: 134px;
-					height: 20px;
+					height: 32px;
 				`;
 			case 'md':
 				return `
@@ -76,7 +76,7 @@ export const ButtonWrapper = styled.div`
 					font-weight: ${variables.fontWeight.semibold};
 					border-radius: 8px;
 					width: 161px;
-					height: 25px;
+					height: 38px;
 				`;
 		}
 	}};
