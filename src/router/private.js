@@ -1,5 +1,6 @@
 import React from 'react';
 
+const Home = React.lazy(() => import('../containers/home'));
 const Dashboard = React.lazy(() => import('../containers/dashboard'));
 const Explore = React.lazy(() => import('../containers/explore'));
 const Pulls = React.lazy(() => import('../containers/pulls'));
@@ -7,6 +8,7 @@ const MarketPlace = React.lazy(() => import('../containers/marketPlace'));
 const Issues = React.lazy(() => import('../containers/issues'));
 
 export const privateRoute = [
+	{ path: '/', component: Home, layout: 'dashboard' },
 	{ path: '/user/:username', component: Dashboard, layout: 'dashboard' },
 	{ path: '/pulls', component: Pulls, layout: 'dashboard' },
 	{ path: '/issues', component: Issues, layout: 'dashboard' },
