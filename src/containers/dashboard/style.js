@@ -65,7 +65,7 @@ export const Main = styled.div`
 	width: ${pxToRem(850)}rem;
 	background-color: ${variables.colors.white};
 	margin: ${pxToRem(10)}rem;
-	height: 1000px;
+	//height: 1000px;
 	padding: ${pxToRem(10)}rem;
 	.repository-card {
 		border-radius: ${pxToRem(8)}rem;
@@ -112,6 +112,18 @@ export const Main = styled.div`
 					background-color: ${variables.colors.LightSuccess};
 				}
 			}
+		}
+	}
+	.activities {
+		.activities-date-seprator {
+			flex-grow: 2;
+			height: 1px;
+			background-color: ${variables.colors.Gray};
+		}
+		.activities-title {
+			font-size: ${variables.fontSize.base};
+			color: ${variables.colors.black};
+			font-weight: ${variables.fontWeight.semibold};
 		}
 	}
 `;

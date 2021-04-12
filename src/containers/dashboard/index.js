@@ -4,6 +4,7 @@ import { Wrapper, Main, Sidebar } from './style';
 import User from './components/user';
 import Repository from './components/repository';
 import RepositoryFilter from './components/repositoryFilter';
+import Activities from './components/activities';
 
 export default () => {
 	const router = useParams();
@@ -26,6 +27,13 @@ export default () => {
 					<Repository />
 					<Repository />
 					<Repository />
+				</div>
+				<div className="px-3">
+					<div className="mt-4 mb-3">Contribution activity</div>
+					<Activities />
+					<Activities />
+					<Activities />
+					<Activities />
 				</div>
 			</Main>
 		</Wrapper>

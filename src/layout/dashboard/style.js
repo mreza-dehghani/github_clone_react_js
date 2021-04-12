@@ -96,6 +96,7 @@ export const Avatar = styled.div`
 	.header-avatar-image {
 		width: ${pxToRem(35)}rem;
 		height: ${pxToRem(35)}rem;
+		border-radius: 50%;
 	}
 `;
 
@@ -111,7 +112,7 @@ export const Dropdown = styled.div`
 	right: 0;
 	width: ${pxToRem(180)}rem;
 	border-radius: ${pxToRem(8)}rem;
-	box-shadow: 0 0 30px ${variables.colors.WhiteLilac[0]};
+	box-shadow: 0 10px 30px ${variables.colors.WhiteLilac[0]};
 	background-color: ${variables.colors.white};
 	.header-avatar-image {
 		width: ${pxToRem(35)}rem;
