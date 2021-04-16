@@ -17,3 +17,15 @@ export const getRepositoryListFailure = () => {
 		type: types.GET_REPOSITORY_LIST_FAILURE,
 	};
 };
+
+export const repositoryFilter = payload => {
+	return {
+		type: types.REPOSITORY_FILTER,
+		payload,
+	};
+};
+export const clearRepositoryFilter = () => {
+	return {
+		type: types.CLEAR_REPOSITORY_FILTER,
+	};
+};

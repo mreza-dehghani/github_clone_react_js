@@ -123,7 +123,7 @@ export const Main = styled.div`
 			}
 			.repository-type-dropdown-item {
 				display: flex;
-				justify-content: flex-start;
+				justify-content: space-between;
 				align-items: center;
 				padding: ${pxToRem(8)}rem;
 				cursor: pointer;
@@ -132,6 +132,9 @@ export const Main = styled.div`
 				}
 			}
 		}
+	}
+	.repos {
+		min-height: ${pxToRem(300)}rem;
 	}
 	.activities {
 		.activities-date-seprator {

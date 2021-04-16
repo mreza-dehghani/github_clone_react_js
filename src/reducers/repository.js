@@ -4,6 +4,7 @@ const initialState = {
 	getRepositoryList: {
 		loading: false,
 		data: [],
+		initialData: [],
 	},
 };
 
@@ -17,12 +18,40 @@ const Repository = (state = initialState, { type, payload }) => {
 		case types.GET_REPOSITORY_LIST_SUCCESS:
 			return {
 				...state,
-				getRepositoryList: { data: payload, loading: false },
+				getRepositoryList: { data: payload, initialData: payload, loading: false },
 			};
 		case types.GET_REPOSITORY_LIST_FAILURE:
 			return {
 				...state,
-				getRepositoryList: { data: [], loading: false },
+				getRepositoryList: { data: [], initialData: [], loading: false },
+			};
+
+		case types.REPOSITORY_FILTER:
+			const filterRepository = (data, initialData, payload) => {
+				const filteredBySearch =
+					initialData &&
+					initialData.filter(item => {
+						if (item.name.includes(payload.search)) {
+							return item;
+						}
+					});
+				return filteredBySearch;
+			};
+			return {
+				...state,
+				getRepositoryList: {
+					...state.getRepositoryList,
+					data: filterRepository(state.getRepositoryList.data, state.getRepositoryList.initialData, payload),
+				},
+			};
+		case types.CLEAR_REPOSITORY_FILTER:
+			return {
+				...state,
+				getRepositoryList: {
+					...state.getRepositoryList,
+					data: [...state.getRepositoryList.initialData],
+					initialData: [...state.getRepositoryList.initialData],
+				},
 			};
 
 		default:

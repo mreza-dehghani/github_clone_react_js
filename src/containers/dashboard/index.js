@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { connect } from 'react-redux';
 import { Wrapper, Main, Sidebar } from './style';
@@ -21,11 +21,18 @@ const Dashboard = props => {
 		getRepositoryListData,
 		getUserPublicEventsLoading,
 		getUserPublicEventsData,
+		filterRepository,
+		clearRepositoryFilter,
+		getRepositoryList,
 		clearData,
 	} = props;
 	const router = useParams();
 	const userInfo = getLocalStorage('userInfo');
 	const paramsUsername = router.username;
+	const [repositoryFilter, setRepositoryFilter] = useState({
+		search: '',
+		type: '',
+	});
 
 	useEffect(() => {
 		if (paramsUsername === userInfo.login) {
@@ -38,10 +45,14 @@ const Dashboard = props => {
 			clearData();
 		};
 	}, []);
-	console.log(getUserPublicEventsData);
+
+	useEffect(() => {
+		filterRepository(repositoryFilter);
+	}, [repositoryFilter]);
+
 	return (
 		<Wrapper>
-			{getUserInfoLoading && Object.keys(getUserInfoData).length > 0 ? (
+			{getUserInfoLoading || getRepositoryListLoading || getUserPublicEventsLoading ? (
 				<FullScreenLoading />
 			) : (
 				<>
@@ -60,37 +71,40 @@ const Dashboard = props => {
 						{getUserInfoData.links && <UserLinks data={getUserInfoData.links} />}
 					</Sidebar>
 					<Main>
-						{getRepositoryListLoading ? (
-							<div className="d-flex justify-content-center align-items-center w-100 py-4">
-								<Spinner />
+						<div className="repos">
+							<RepositoryFilter
+								setFilter={setRepositoryFilter}
+								filter={repositoryFilter}
+								username={getUserInfoData.login}
+							/>
+							<div className="d-flex justify-content-start align-items-start flex-wrap ">
+								{getRepositoryListData && getRepositoryListData.length > 0 ? (
+									getRepositoryListData.map((item, key) => {
+										return (
+											<Repository
+												key={key}
+												username={getUserInfoData.login}
+												updatedAt={item.updated_at}
+												name={item.name}
+												lang={item.language}
+												description={item.description}
+											/>
+										);
+									})
+								) : (
+									<div>{getUserInfoData.login} doesn’t have any repositories that match.</div>
+								)}
 							</div>
-						) : (
-							<>
-								<RepositoryFilter />
-								<div className="d-flex justify-content-start align-items-start flex-wrap">
-									{getRepositoryListData &&
-										getRepositoryListData.map((item, key) => {
-											return (
-												<Repository
-													key={key}
-													username={getUserInfoData.login}
-													updatedAt={item.updated_at}
-													name={item.name}
-													lang={item.language}
-													description={item.description}
-												/>
-											);
-										})}
-								</div>
-							</>
-						)}
-						<div className="px-3">
-							<div className="mt-4 mb-3">Contribution activity</div>
-							{getUserPublicEventsData &&
-								getUserPublicEventsData.map((item, index) => {
-									return <Activities key={index} date={item.created_at} items={item.items} />;
-								})}
 						</div>
+						{getUserPublicEventsData.length > 0 && (
+							<div className="px-3">
+								<div className="mt-4 mb-3">Contribution activity</div>
+								{getUserPublicEventsData &&
+									getUserPublicEventsData.map((item, index) => {
+										return <Activities key={index} date={item.created_at} items={item.items} />;
+									})}
+							</div>
+						)}
 					</Main>
 				</>
 			)}
@@ -112,6 +126,9 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
 	return {
 		getAuthenticateUserInfo: postData => dispatch(ActionAccount.getAuthenticateUserInfo(postData)),
+		filterRepository: payload => dispatch(ActionRepository.repositoryFilter(payload)),
+		clearRepositoryFilter: () => dispatch(ActionRepository.clearRepositoryFilter()),
+		getRepositoryList: postData => dispatch(ActionRepository.getRepositoryList(postData)),
 		clearData: () => {
 			dispatch(ActionAccount.getAuthenticateUserInfoFailure());
 			dispatch(ActionRepository.getRepositoryListFailure());
