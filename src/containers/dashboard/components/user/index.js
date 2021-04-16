@@ -1,17 +1,28 @@
 import * as Card from '../../../../components/card';
 import Button from '../../../../components/button';
 
-export default () => {
+export default props => {
+	const {
+		avatar,
+		name,
+		username,
+		bio,
+		profileOnClick,
+		followersCount,
+		followingCount,
+		followersOnClick,
+		followingOnClick,
+	} = props;
 	return (
 		<Card.Card>
 			<Card.Header>
 				<div className="user-info">
 					<div className="user-info-header">
-						<img src="" alt="avatar" className="user-info-avatar" />
-						<div className="user-info-full-name">mohammadreza</div>
-						<div className="user-info-user-name">username</div>
-						<div className="user-info-user-bio">bio</div>
-						<Button type="secondary-outline" size="sm" onClick={() => console.log(true)} classes="mt-3" loading={false}>
+						<img src={avatar} alt="avatar" className="user-info-avatar" />
+						<div className="user-info-full-name">{name}</div>
+						<div className="user-info-user-name">{username}</div>
+						<div className="user-info-user-bio">{bio}</div>
+						<Button type="secondary-outline" size="sm" onClick={profileOnClick} classes="mt-3" loading={false}>
 							Edit
 						</Button>
 					</div>
@@ -19,13 +30,13 @@ export default () => {
 			</Card.Header>
 			<Card.Body>
 				<div className="user-info-body">
-					<div className="user-info-followers">
+					<div className="user-info-followers" onClick={followersOnClick}>
 						<div>followers</div>
-						<b>20</b>
+						<b>{followersCount}</b>
 					</div>
-					<div className="user-info-followers">
+					<div className="user-info-followers" onClick={followingOnClick}>
 						<div>following</div>
-						<b>20</b>
+						<b>{followingCount}</b>
 					</div>
 				</div>
 			</Card.Body>

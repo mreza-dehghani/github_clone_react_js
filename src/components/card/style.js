@@ -6,6 +6,7 @@ export const CardWrapper = styled.div`
 	width: 100%;
 	border-radius: ${pxToRem(8)}rem;
 	background-color: ${variables.colors.white};
+	overflow: hidden;
 `;
 
 export const CardHeader = styled.div`

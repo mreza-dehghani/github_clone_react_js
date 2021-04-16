@@ -58,6 +58,22 @@ export const Sidebar = styled.div`
 			}
 		}
 	}
+	.user-info-links {
+		overflow: hidden;
+		.user-info-link-item {
+			overflow: hidden;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: ${pxToRem(10)}rem;
+			cursor: pointer;
+			.user-info-link-item-link {
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
+		}
+	}
 `;
 
 export const Main = styled.div`
@@ -65,7 +81,7 @@ export const Main = styled.div`
 	width: ${pxToRem(850)}rem;
 	background-color: ${variables.colors.white};
 	margin: ${pxToRem(10)}rem;
-	//height: 1000px;
+	min-height: 500px;
 	padding: ${pxToRem(10)}rem;
 	.repository-card {
 		border-radius: ${pxToRem(8)}rem;
@@ -77,6 +93,9 @@ export const Main = styled.div`
 			font-size: ${variables.fontSize.base};
 			color: ${variables.colors.Primary};
 			font-weight: ${variables.fontWeight.semibold};
+		}
+		.repository-updated-at {
+			font-size: ${variables.fontSize.xs};
 		}
 	}
 	.repository-filter {
@@ -121,8 +140,8 @@ export const Main = styled.div`
 			background-color: ${variables.colors.Gray};
 		}
 		.activities-title {
-			font-size: ${variables.fontSize.base};
-			color: ${variables.colors.black};
+			font-size: ${variables.fontSize.sm};
+			color: ${variables.colors.Scorpion};
 			font-weight: ${variables.fontWeight.semibold};
 		}
 	}
