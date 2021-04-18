@@ -18,14 +18,26 @@ export const getRepositoryListFailure = () => {
 	};
 };
 
-export const repositoryFilter = payload => {
+export const repositoryFilterBySearch = payload => {
 	return {
-		type: types.REPOSITORY_FILTER,
+		type: types.REPOSITORY_FILTER_BY_SEARCH,
 		payload,
 	};
 };
-export const clearRepositoryFilter = () => {
+export const clearRepositoryFilterBySearch = () => {
 	return {
-		type: types.CLEAR_REPOSITORY_FILTER,
+		type: types.CLEAR_REPOSITORY_FILTER_BY_SEARCH,
+	};
+};
+
+export const repositoryFilterByType = payload => {
+	return {
+		type: types.REPOSITORY_FILTER_BY_TYPE,
+		payload,
+	};
+};
+export const clearRepositoryFilterByType = () => {
+	return {
+		type: types.CLEAR_REPOSITORY_FILTER_BY_TYPE,
 	};
 };

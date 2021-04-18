@@ -1,7 +1,7 @@
 import * as types from '../constants/actionTypes';
 
 const initialState = {
-	getAuthenticateUserInfo: {
+	getUserInfo: {
 		loading: false,
 		data: [],
 	},
@@ -12,12 +12,12 @@ const Account = (state = initialState, { type, payload }) => {
 		case types.GET_AUTHENTICATED_USER_INFO_REQUEST:
 			return {
 				...state,
-				getAuthenticateUserInfo: { ...state.getAuthenticateUserInfo, loading: true },
+				getUserInfo: { ...state.getUserInfo, loading: true },
 			};
 		case types.GET_AUTHENTICATED_USER_INFO_SUCCESS:
 			return {
 				...state,
-				getAuthenticateUserInfo: {
+				getUserInfo: {
 					data: {
 						...payload,
 						links: [
@@ -32,7 +32,7 @@ const Account = (state = initialState, { type, payload }) => {
 		case types.GET_AUTHENTICATED_USER_INFO_FAILURE:
 			return {
 				...state,
-				getAuthenticateUserInfo: { data: [], loading: false },
+				getUserInfo: { data: [], loading: false },
 			};
 
 		default:

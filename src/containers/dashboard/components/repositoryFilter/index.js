@@ -4,7 +4,7 @@ import Button from '../../../../components/button';
 import { History } from '../../../../helper/history';
 
 export default props => {
-	const { setFilter, filter, username } = props;
+	const { searchFilterRef, filter, username, setSearchFilter, setTypeFilter } = props;
 	const [showDropdown, setShowDropdown] = useState(false);
 	const types = ['all', 'public', 'private'];
 
@@ -13,7 +13,8 @@ export default props => {
 			<Searchbar
 				styleType="pure"
 				placeholder="search repository"
-				onChange={e => setFilter({ ...filter, search: e.target.value })}
+				onChange={e => setSearchFilter(e.target.value)}
+				searchbarRef={searchFilterRef}
 			/>
 			<div className="position-relative">
 				<Button
@@ -40,12 +41,12 @@ export default props => {
 									className="repository-type-dropdown-item"
 									key={key}
 									onClick={() => {
-										setFilter({ ...filter, type: item });
+										setTypeFilter(item);
 										setShowDropdown(!showDropdown);
 									}}
 								>
 									{item}
-									{item === filter.type && <i className="fa fa-check " />}
+									{item === filter && <i className="fa fa-check " />}
 								</div>
 							))}
 					</div>

@@ -5,6 +5,7 @@ const initialState = {
 		loading: false,
 		data: [],
 		initialData: [],
+		isFilter: false,
 	},
 };
 
@@ -26,31 +27,66 @@ const Repository = (state = initialState, { type, payload }) => {
 				getRepositoryList: { data: [], initialData: [], loading: false },
 			};
 
-		case types.REPOSITORY_FILTER:
-			const filterRepository = (data, initialData, payload) => {
-				const filteredBySearch =
+		case types.REPOSITORY_FILTER_BY_SEARCH:
+			const filterRepository = (initialData, payload) => {
+				return (
 					initialData &&
 					initialData.filter(item => {
-						if (item.name.includes(payload.search)) {
+						if (item.name.includes(payload)) {
 							return item;
 						}
-					});
-				return filteredBySearch;
+					})
+				);
 			};
 			return {
 				...state,
 				getRepositoryList: {
 					...state.getRepositoryList,
-					data: filterRepository(state.getRepositoryList.data, state.getRepositoryList.initialData, payload),
+					data: filterRepository(state.getRepositoryList.initialData, payload),
+					isFilter: true,
 				},
 			};
-		case types.CLEAR_REPOSITORY_FILTER:
+		case types.CLEAR_REPOSITORY_FILTER_BY_SEARCH:
 			return {
 				...state,
 				getRepositoryList: {
 					...state.getRepositoryList,
 					data: [...state.getRepositoryList.initialData],
-					initialData: [...state.getRepositoryList.initialData],
+					isFilter: false,
+				},
+			};
+
+		case types.REPOSITORY_FILTER_BY_TYPE:
+			const filterRepositoryByType = (initialData, payload) => {
+				console.log(payload);
+				return (
+					initialData &&
+					initialData.filter(item => {
+						if (payload === 'private' && item.name.private) {
+							return item;
+						} else if (payload === 'public' && !item.name.private) {
+							return item;
+						} else if (payload === 'all') {
+							return item;
+						}
+					})
+				);
+			};
+			return {
+				...state,
+				getRepositoryList: {
+					...state.getRepositoryList,
+					data: filterRepositoryByType(state.getRepositoryList.initialData, payload),
+					isFilter: true,
+				},
+			};
+		case types.CLEAR_REPOSITORY_FILTER_BY_TYPE:
+			return {
+				...state,
+				getRepositoryList: {
+					...state.getRepositoryList,
+					data: [...state.getRepositoryList.initialData],
+					isFilter: false,
 				},
 			};
 
