@@ -7,11 +7,10 @@ import Repository from './components/repository';
 import RepositoryFilter from './components/repositoryFilter';
 import Activities from './components/activities';
 import UserLinks from './components/userLinks';
+import FollowModal from './components/followModal';
 import { ActionAccount, ActionActivity, ActionRepository } from '../../actions';
 import { getLocalStorage } from '../../helper/localStorage';
 import FullScreenLoading from '../../components/fullScreenLoading';
-import Spinner from '../../components/spinner';
-import { Button } from 'react-bootstrap';
 
 const Dashboard = props => {
 	const {
@@ -26,7 +25,12 @@ const Dashboard = props => {
 		repositoryFilterBySearch,
 		repositoryFilterByType,
 		clearRepositoryFilter,
-		getRepositoryList,
+		getUserFollowerList,
+		getUserFollowingList,
+		getUserFollowerListLoading,
+		getUserFollowerListData,
+		getUserFollowingListLoading,
+		getUserFollowingListData,
 		clearData,
 	} = props;
 	const router = useParams();
@@ -34,13 +38,18 @@ const Dashboard = props => {
 	const paramsUsername = router.username;
 	const [searchFilter, setSearchFilter] = useState(null);
 	const [typeFilter, setTypeFilter] = useState(null);
+	const [showFollowModal, setShowFollowModal] = useState({
+		show: false,
+		title: '',
+		type: '',
+	});
 	const searchFilterRef = useRef();
 
 	useEffect(() => {
 		if (paramsUsername === userInfo.login) {
 			getAuthenticateUserInfo(userInfo.login);
 		}
-		// fetch(`${process.env.REACT_APP_API_URL}/users/mreza-dehghani/events/public`)
+		// fetch(`${process.env.REACT_APP_API_URL}/users/mreza-dehghani/followers`)
 		// 	.then(res => res.json())
 		// 	.then(result => console.log(result));
 		return () => {
@@ -67,8 +76,27 @@ const Dashboard = props => {
 		setSearchFilter(null);
 	};
 
+	const openFollowerModal = (title, type) => {
+		setShowFollowModal({
+			show: true,
+			title: title,
+			type: type,
+		});
+	};
+
 	return (
 		<Wrapper>
+			<FollowModal
+				showFollowModal={showFollowModal}
+				closeHandler={() => setShowFollowModal({ show: false, title: '', type: '' })}
+				getUserFollowerList={getUserFollowerList}
+				getUserFollowingList={getUserFollowingList}
+				username={paramsUsername}
+				getUserFollowerListLoading={getUserFollowerListLoading}
+				getUserFollowerListData={getUserFollowerListData}
+				getUserFollowingListLoading={getUserFollowingListLoading}
+				getUserFollowingListData={getUserFollowingListData}
+			/>
 			{getUserInfoLoading || getRepositoryListLoading || getUserPublicEventsLoading ? (
 				<FullScreenLoading />
 			) : (
@@ -82,8 +110,7 @@ const Dashboard = props => {
 							profileOnClick={() => console.log(true)}
 							followersCount={getUserInfoData.followers}
 							followingCount={getUserInfoData.following}
-							followersOnClick={() => console.log(true)}
-							followingOnClick={() => console.log(true)}
+							openFollowerModal={(title, type) => openFollowerModal(title, type)}
 						/>
 						{getUserInfoData.links && <UserLinks data={getUserInfoData.links} />}
 					</Sidebar>
@@ -149,15 +176,20 @@ const mapStateToProps = state => {
 		isRepositoryFilter: state.Repository.getRepositoryList.isFilter,
 		getUserPublicEventsLoading: state.Activity.getUserPublicEvents.loading,
 		getUserPublicEventsData: state.Activity.getUserPublicEvents.data,
+		getUserFollowerListLoading: state.Account.getUserFollowerList.loading,
+		getUserFollowerListData: state.Account.getUserFollowerList.data,
+		getUserFollowingListLoading: state.Account.getUserFollowingList.loading,
+		getUserFollowingListData: state.Account.getUserFollowingList.data,
 	};
 };
 
 const mapDispatchToProps = dispatch => {
 	return {
 		getAuthenticateUserInfo: postData => dispatch(ActionAccount.getAuthenticateUserInfo(postData)),
-		getRepositoryList: postData => dispatch(ActionRepository.getRepositoryList(postData)),
 		repositoryFilterBySearch: payload => dispatch(ActionRepository.repositoryFilterBySearch(payload)),
 		repositoryFilterByType: payload => dispatch(ActionRepository.repositoryFilterByType(payload)),
+		getUserFollowerList: postData => dispatch(ActionAccount.getUserFollowerList(postData)),
+		getUserFollowingList: postData => dispatch(ActionAccount.getUserFollowingList(postData)),
 		clearRepositoryFilter: () => {
 			dispatch(ActionRepository.clearRepositoryFilterBySearch());
 			dispatch(ActionRepository.clearRepositoryFilterByType());
@@ -166,6 +198,8 @@ const mapDispatchToProps = dispatch => {
 			dispatch(ActionAccount.getAuthenticateUserInfoFailure());
 			dispatch(ActionRepository.getRepositoryListFailure());
 			dispatch(ActionActivity.getUserPublicEventsFailure());
+			dispatch(ActionAccount.getUserFollowerListFailure());
+			dispatch(ActionAccount.getUserFollowingListFailure());
 		},
 	};
 };

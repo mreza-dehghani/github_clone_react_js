@@ -8,6 +8,20 @@ export const Wrapper = styled.div`
 	justify-content: flex-start;
 	align-items: flex-start;
 	padding: ${pxToRem(30)}rem 0;
+	.follower-container {
+		border-bottom: 1px solid ${variables.colors.WhiteLilac[0]};
+		padding: ${pxToRem(8)}rem 0;
+		.user-info-avatar {
+			height: ${pxToRem(60)}rem;
+			width: ${pxToRem(60)}rem;
+			border-radius: 50%;
+		}
+		.user-info-full-name {
+			color: ${variables.colors.black};
+			font-size: ${variables.fontSize.base};
+			font-weight: ${variables.fontWeight.semibold};
+		}
+	}
 `;
 
 export const Sidebar = styled.div`

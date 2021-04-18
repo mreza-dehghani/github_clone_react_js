@@ -17,8 +17,8 @@ function* workerGetUserPublicEvents(action) {
 		const data = response && response.data;
 		yield put(ActionActivity.getUserPublicEventsSuccess(data));
 	} catch (error) {
-		if (error) {
-			toast.error('Error!');
+		if (error && error.message) {
+			toast.error(error.message.toString());
 			console.log(error);
 		}
 		yield put(ActionActivity.getUserPublicEventsFailure());

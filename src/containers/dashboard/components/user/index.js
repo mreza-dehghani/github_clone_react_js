@@ -2,17 +2,7 @@ import * as Card from '../../../../components/card';
 import Button from '../../../../components/button';
 
 export default props => {
-	const {
-		avatar,
-		name,
-		username,
-		bio,
-		profileOnClick,
-		followersCount,
-		followingCount,
-		followersOnClick,
-		followingOnClick,
-	} = props;
+	const { avatar, name, username, bio, profileOnClick, followersCount, followingCount, openFollowerModal } = props;
 	return (
 		<Card.Card>
 			<Card.Header>
@@ -30,11 +20,11 @@ export default props => {
 			</Card.Header>
 			<Card.Body>
 				<div className="user-info-body">
-					<div className="user-info-followers" onClick={followersOnClick}>
+					<div className="user-info-followers" onClick={() => openFollowerModal('Follower', 'follower')}>
 						<div>followers</div>
 						<b>{followersCount}</b>
 					</div>
-					<div className="user-info-followers" onClick={followingOnClick}>
+					<div className="user-info-followers" onClick={() => openFollowerModal('Following', 'following')}>
 						<div>following</div>
 						<b>{followingCount}</b>
 					</div>

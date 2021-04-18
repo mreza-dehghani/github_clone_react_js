@@ -24,8 +24,8 @@ function* workerLogin(action) {
 			History.replace(`/user/${data.login}`);
 		}
 	} catch (error) {
-		if (error) {
-			toast.error('Error!');
+		if (error && error.message) {
+			toast.error(error.message.toString());
 			console.log(error);
 		}
 		yield put(ActionAuth.loginFailure());
