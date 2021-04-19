@@ -1,8 +1,8 @@
 import Modal from '../../../../components/modal';
 import Button from '../../../../components/button';
-import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import Spinner from '../../../../components/spinner';
+import { History } from '../../../../helper/history';
 
 export default props => {
 	const {
@@ -16,6 +16,7 @@ export default props => {
 		getUserFollowerListData,
 		getUserFollowingListLoading,
 		getUserFollowingListData,
+		unfollowUser,
 	} = props;
 
 	useEffect(() => {
@@ -25,6 +26,11 @@ export default props => {
 			getUserFollowingList(username);
 		}
 	}, [showFollowModal]);
+
+	const onLinkClick = link => {
+		History.push(link);
+		closeHandler();
+	};
 
 	return (
 		<Modal show={showFollowModal.show} header={{ title: showFollowModal.title }} closeHandler={closeHandler}>
@@ -37,21 +43,13 @@ export default props => {
 				getUserFollowerListData &&
 				getUserFollowerListData.map((item, key) => {
 					return (
-						<div className="d-flex justify-content-between align-items-center follower-container" key={key}>
-							<div className="d-flex justify-content-between align-items-center">
-								<Link to="/">
-									<img src={item.avatar_url} alt="user_avatar" className="user-info-avatar" />
-								</Link>
-								<div className="ml-3">
-									<Link to="/" className="user-info-full-name">
-										{item.login}
-									</Link>
-								</div>
-							</div>
-							<Button type="secondary-outline" size="sm" onClick={() => clickHandler()} classes="py-1" loading={false}>
-								<div>Unfollow</div>
-							</Button>
-						</div>
+						<User
+							onLinkClick={onLinkClick}
+							onBtnClick={username => unfollowUser(username)}
+							key={key}
+							item={item}
+							type={showFollowModal.type}
+						/>
 					);
 				})}
 			{showFollowModal.type === 'following' && getUserFollowingListLoading && (
@@ -63,23 +61,35 @@ export default props => {
 				getUserFollowingListData &&
 				getUserFollowingListData.map((item, key) => {
 					return (
-						<div className="d-flex justify-content-between align-items-center follower-container" key={key}>
-							<div className="d-flex justify-content-between align-items-center">
-								<Link to="/">
-									<img src={item.avatar_url} alt="user_avatar" className="user-info-avatar" />
-								</Link>
-								<div className="ml-3">
-									<Link to="/" className="user-info-full-name">
-										{item.login}
-									</Link>
-								</div>
-							</div>
-							<Button type="secondary-outline" size="sm" onClick={() => clickHandler()} classes="py-1" loading={false}>
-								<div>Profile</div>
-							</Button>
-						</div>
+						<User
+							onLinkClick={onLinkClick}
+							onBtnClick={username => unfollowUser(username)}
+							key={key}
+							item={item}
+							type={showFollowModal.type}
+						/>
 					);
 				})}
 		</Modal>
+	);
+};
+
+const User = ({ type, item, onLinkClick, onBtnClick }) => {
+	return (
+		<div className="d-flex justify-content-between align-items-center follower-container">
+			<div className="d-flex justify-content-between align-items-center">
+				<div onClick={() => onLinkClick(`/user/${item.login}`)} className="pointer">
+					<img src={item.avatar_url} alt="user_avatar" className="user-info-avatar" />
+				</div>
+				<div className="ml-3">
+					<div onClick={() => onLinkClick(`/user/${item.login}`)} className="user-info-full-name pointer">
+						{item.login}
+					</div>
+				</div>
+			</div>
+			<Button type="secondary-outline" size="sm" onClick={() => onBtnClick(item.login)} classes="py-1" loading={false}>
+				<div>{type === 'following' ? 'Unfollow' : 'Profile'}</div>
+			</Button>
+		</div>
 	);
 };

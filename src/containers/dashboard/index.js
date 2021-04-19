@@ -15,6 +15,7 @@ import FullScreenLoading from '../../components/fullScreenLoading';
 const Dashboard = props => {
 	const {
 		getAuthenticateUserInfo,
+		getOtherUserInfo,
 		getUserInfoLoading,
 		getUserInfoData,
 		getRepositoryListLoading,
@@ -31,6 +32,7 @@ const Dashboard = props => {
 		getUserFollowerListData,
 		getUserFollowingListLoading,
 		getUserFollowingListData,
+		unfollowUser,
 		clearData,
 	} = props;
 	const router = useParams();
@@ -48,6 +50,8 @@ const Dashboard = props => {
 	useEffect(() => {
 		if (paramsUsername === userInfo.login) {
 			getAuthenticateUserInfo(userInfo.login);
+		} else {
+			getOtherUserInfo(paramsUsername);
 		}
 		// fetch(`${process.env.REACT_APP_API_URL}/users/mreza-dehghani/followers`)
 		// 	.then(res => res.json())
@@ -55,7 +59,7 @@ const Dashboard = props => {
 		return () => {
 			clearData();
 		};
-	}, []);
+	}, [paramsUsername]);
 
 	useEffect(() => {
 		if (searchFilter) {
@@ -96,6 +100,7 @@ const Dashboard = props => {
 				getUserFollowerListData={getUserFollowerListData}
 				getUserFollowingListLoading={getUserFollowingListLoading}
 				getUserFollowingListData={getUserFollowingListData}
+				unfollowUser={unfollowUser}
 			/>
 			{getUserInfoLoading || getRepositoryListLoading || getUserPublicEventsLoading ? (
 				<FullScreenLoading />
@@ -111,6 +116,7 @@ const Dashboard = props => {
 							followersCount={getUserInfoData.followers}
 							followingCount={getUserInfoData.following}
 							openFollowerModal={(title, type) => openFollowerModal(title, type)}
+							disabledLink={paramsUsername !== userInfo.login}
 						/>
 						{getUserInfoData.links && <UserLinks data={getUserInfoData.links} />}
 					</Sidebar>
@@ -145,8 +151,8 @@ const Dashboard = props => {
 										);
 									})
 								) : (
-									<div className="px-2 my-4">
-										<b>{getUserInfoData.login}</b> doesn’t have any repositories that match.
+									<div className="p-2 my-4 mx-2 badge-warning">
+										<b>{getUserInfoData.login}</b> doesn't have any repositories that match.
 									</div>
 								)}
 							</div>
@@ -186,20 +192,24 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
 	return {
 		getAuthenticateUserInfo: postData => dispatch(ActionAccount.getAuthenticateUserInfo(postData)),
+		getOtherUserInfo: postData => dispatch(ActionAccount.getOtherUserInfo(postData)),
 		repositoryFilterBySearch: payload => dispatch(ActionRepository.repositoryFilterBySearch(payload)),
 		repositoryFilterByType: payload => dispatch(ActionRepository.repositoryFilterByType(payload)),
 		getUserFollowerList: postData => dispatch(ActionAccount.getUserFollowerList(postData)),
 		getUserFollowingList: postData => dispatch(ActionAccount.getUserFollowingList(postData)),
+		unfollowUser: postData => dispatch(ActionAccount.unfollowUser(postData)),
 		clearRepositoryFilter: () => {
 			dispatch(ActionRepository.clearRepositoryFilterBySearch());
 			dispatch(ActionRepository.clearRepositoryFilterByType());
 		},
 		clearData: () => {
 			dispatch(ActionAccount.getAuthenticateUserInfoFailure());
+			dispatch(ActionAccount.getOtherUserInfoFailure());
 			dispatch(ActionRepository.getRepositoryListFailure());
 			dispatch(ActionActivity.getUserPublicEventsFailure());
 			dispatch(ActionAccount.getUserFollowerListFailure());
 			dispatch(ActionAccount.getUserFollowingListFailure());
+			dispatch(ActionAccount.unfollowUserFailure());
 		},
 	};
 };

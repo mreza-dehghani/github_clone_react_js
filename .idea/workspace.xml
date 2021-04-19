@@ -6,14 +6,12 @@
       <change beforePath="$PROJECT_DIR$/src/actions/account.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/account.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/apis/account.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/apis/account.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/constants/actionTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/actionTypes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/dashboard/components/followModal/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/dashboard/components/followModal/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/dashboard/components/user/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/dashboard/components/user/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/dashboard/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/dashboard/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/dashboard/style.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/dashboard/style.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/reducers/account.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/account.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/repository.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/repository.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sagas/account.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sagas/account.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sagas/activity.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sagas/activity.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sagas/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sagas/auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sagas/repository.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sagas/repository.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/style/global/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/global/index.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -96,7 +94,9 @@
       <workItem from="1618635559967" duration="8000" />
       <workItem from="1618666102201" duration="1834000" />
       <workItem from="1618722229129" duration="7000" />
-      <workItem from="1618731068125" duration="14888000" />
+      <workItem from="1618731068125" duration="15007000" />
+      <workItem from="1618808457895" duration="7000" />
+      <workItem from="1618847514802" duration="5379000" />
     </task>
     <servers />
   </component>

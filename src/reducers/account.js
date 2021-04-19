@@ -13,6 +13,10 @@ const initialState = {
 		loading: false,
 		data: [],
 	},
+	unfollowUser: {
+		loading: false,
+		data: [],
+	},
 };
 
 const Account = (state = initialState, { type, payload }) => {
@@ -38,6 +42,32 @@ const Account = (state = initialState, { type, payload }) => {
 				},
 			};
 		case types.GET_AUTHENTICATED_USER_INFO_FAILURE:
+			return {
+				...state,
+				getUserInfo: { data: [], loading: false },
+			};
+
+		case types.GET_OTHER_USER_INFO_REQUEST:
+			return {
+				...state,
+				getUserInfo: { ...state.getUserInfo, loading: true },
+			};
+		case types.GET_OTHER_USER_INFO_SUCCESS:
+			return {
+				...state,
+				getUserInfo: {
+					data: {
+						...payload,
+						links: [
+							{ name: 'blog', path: payload.blog },
+							{ name: 'twitter', path: payload.twitter },
+							{ name: 'company', path: payload.company },
+						],
+					},
+					loading: false,
+				},
+			};
+		case types.GET_OTHER_USER_INFO_FAILURE:
 			return {
 				...state,
 				getUserInfo: { data: [], loading: false },
@@ -73,6 +103,22 @@ const Account = (state = initialState, { type, payload }) => {
 			return {
 				...state,
 				getUserFollowingList: { data: [], loading: false },
+			};
+
+		case types.UNFOLLOW_USER_REQUEST:
+			return {
+				...state,
+				unfollowUser: { ...state.unfollowUser, loading: true },
+			};
+		case types.UNFOLLOW_USER_SUCCESS:
+			return {
+				...state,
+				unfollowUser: { data: payload, loading: false },
+			};
+		case types.UNFOLLOW_USER_FAILURE:
+			return {
+				...state,
+				unfollowUser: { data: [], loading: false },
 			};
 
 		default:

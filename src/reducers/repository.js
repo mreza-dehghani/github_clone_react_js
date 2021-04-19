@@ -58,7 +58,6 @@ const Repository = (state = initialState, { type, payload }) => {
 
 		case types.REPOSITORY_FILTER_BY_TYPE:
 			const filterRepositoryByType = (initialData, payload) => {
-				console.log(payload);
 				return (
 					initialData &&
 					initialData.filter(item => {
