@@ -18,14 +18,14 @@ function* workerLogin(action) {
 		const response = yield call(login, action.postData);
 		const data = response.data;
 		setLocalStorage('userInfo', data);
-		setLocalStorage('userToken', data.node_id, process.env.EXPIRY_TOKEN_TIME);
+		setLocalStorage('userToken', data.node_id);
 		yield put(ActionAuth.loginSuccess(data));
 		if (response.status !== 404 && response.status === 200) {
 			History.replace(`/user/${data.login}`);
 		}
 	} catch (error) {
-		if (error) {
-			toast.error('Error!');
+		if (error && error.message) {
+			toast.error(error.message.toString());
 			console.log(error);
 		}
 		yield put(ActionAuth.loginFailure());

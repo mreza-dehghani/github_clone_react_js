@@ -1,28 +1,70 @@
-
 @font-face {
     font-family: GiloryLight;
-
     src: url('../../assets/font/Gilroy-Light.ttf');
 }
 
 @font-face {
     font-family: GiloryMedium;
-
     src: url('../../assets/font/Gilroy-Medium.ttf');
 }
 
 @font-face {
     font-family: GiloryBold;
-
     src: url('../../assets/font/Gilroy-Bold.ttf');
 }
 
 @font-face {
     font-family: GiloryExtraBold;
-
     src: url('../../assets/font/Gilroy-ExtraBold.ttf');
 }
 
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+
+::-webkit-scrollbar-track {
+    background: #34BEA5;
+    width: 5px;
+}
+
+@media screen and (max-width: 768px) {
+    ::-webkit-scrollbar {
+        width: 15px;
+    }
+}
+
+::-webkit-scrollbar {
+     width: 10px;
+ }
+
+::-webkit-scrollbar-track {
+     background: #9ae6b4;
+}
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+    background: #34BEA5;
+    border-radius: 1.5rem;
+}
+
+/* Handle on hover */
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(220, 220, 228, 1);
+}
+
+::selection {
+    background: #34bea5; /* WebKit/Blink Browsers */
+    color: white;
+}
+
+::-moz-selection {
+    background: #34bea5; /* WebKit/Blink Browsers */
+    color: white;
+}
 
 body {
     font-family: GiloryLight !important;
@@ -37,4 +79,8 @@ ul {
 
 a {
     text-decoration: none !important;
+}
+
+.pointer {
+    cursor: pointer;
 }

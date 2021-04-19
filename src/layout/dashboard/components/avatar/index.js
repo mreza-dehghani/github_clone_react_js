@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Avatar, Dropdown } from '../../style';
 import dropdownItems from './dropdownItems';
 import avatar from '../../../../assets/img/avatar.svg';
@@ -17,20 +17,20 @@ export default ({ show, toggle, userInfo }) => {
 						<div className="dropdown-item-header-username">{userInfo?.fullName}</div>
 					</div>
 					<div className="dropdown-item-list">
-						{dropdownItems &&
-							dropdownItems.map((item, key) => {
+						{dropdownItems(userInfo) &&
+							dropdownItems(userInfo).map((item, key) => {
 								return (
-									<NavLink to={item.path} exact className="dropdown-item">
+									<Link to={item.path} exact className="dropdown-item">
 										{item.name}
-									</NavLink>
+									</Link>
 								);
 							})}
 					</div>
 					<div className="dropdown-item-footer">
 						<div className="dropdown-item-list">
-							<NavLink to="/login" exact className="dropdown-item">
+							<Link to="/login" exact className="dropdown-item">
 								Sign out
-							</NavLink>
+							</Link>
 						</div>
 					</div>
 				</Dropdown>

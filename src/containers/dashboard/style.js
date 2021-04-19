@@ -8,6 +8,20 @@ export const Wrapper = styled.div`
 	justify-content: flex-start;
 	align-items: flex-start;
 	padding: ${pxToRem(30)}rem 0;
+	.follower-container {
+		border-bottom: 1px solid ${variables.colors.WhiteLilac[0]};
+		padding: ${pxToRem(8)}rem 0;
+		.user-info-avatar {
+			height: ${pxToRem(60)}rem;
+			width: ${pxToRem(60)}rem;
+			border-radius: 50%;
+		}
+		.user-info-full-name {
+			color: ${variables.colors.black};
+			font-size: ${variables.fontSize.base};
+			font-weight: ${variables.fontWeight.semibold};
+		}
+	}
 `;
 
 export const Sidebar = styled.div`
@@ -58,6 +72,22 @@ export const Sidebar = styled.div`
 			}
 		}
 	}
+	.user-info-links {
+		overflow: hidden;
+		.user-info-link-item {
+			overflow: hidden;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: ${pxToRem(10)}rem;
+			cursor: pointer;
+			.user-info-link-item-link {
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
+		}
+	}
 `;
 
 export const Main = styled.div`
@@ -65,7 +95,7 @@ export const Main = styled.div`
 	width: ${pxToRem(850)}rem;
 	background-color: ${variables.colors.white};
 	margin: ${pxToRem(10)}rem;
-	//height: 1000px;
+	min-height: 500px;
 	padding: ${pxToRem(10)}rem;
 	.repository-card {
 		border-radius: ${pxToRem(8)}rem;
@@ -77,6 +107,9 @@ export const Main = styled.div`
 			font-size: ${variables.fontSize.base};
 			color: ${variables.colors.Primary};
 			font-weight: ${variables.fontWeight.semibold};
+		}
+		.repository-updated-at {
+			font-size: ${variables.fontSize.xs};
 		}
 	}
 	.repository-filter {
@@ -104,7 +137,7 @@ export const Main = styled.div`
 			}
 			.repository-type-dropdown-item {
 				display: flex;
-				justify-content: flex-start;
+				justify-content: space-between;
 				align-items: center;
 				padding: ${pxToRem(8)}rem;
 				cursor: pointer;
@@ -114,6 +147,9 @@ export const Main = styled.div`
 			}
 		}
 	}
+	.repos {
+		min-height: ${pxToRem(300)}rem;
+	}
 	.activities {
 		.activities-date-seprator {
 			flex-grow: 2;
@@ -121,8 +157,8 @@ export const Main = styled.div`
 			background-color: ${variables.colors.Gray};
 		}
 		.activities-title {
-			font-size: ${variables.fontSize.base};
-			color: ${variables.colors.black};
+			font-size: ${variables.fontSize.sm};
+			color: ${variables.colors.Scorpion};
 			font-weight: ${variables.fontWeight.semibold};
 		}
 	}
