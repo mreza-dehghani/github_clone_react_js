@@ -3,7 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="550a7884-7dc4-4681-931e-128dca2ef94d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layout/dashboard/style.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layout/dashboard/style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/apis/account.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/apis/account.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/dashboard/components/repositoryFilter/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/dashboard/components/repositoryFilter/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/dashboard/components/user/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/dashboard/components/user/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/dashboard/components/userLinks/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/dashboard/components/userLinks/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/dashboard/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/dashboard/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/repository/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/repository/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/router/private.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/private.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,8 +21,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -89,7 +97,10 @@
       <workItem from="1618808457895" duration="7000" />
       <workItem from="1618847514802" duration="5379000" />
       <workItem from="1618895049153" duration="11000" />
-      <workItem from="1618936655624" duration="536000" />
+      <workItem from="1618936655624" duration="1373000" />
+      <workItem from="1618981742991" duration="41000" />
+      <workItem from="1619001533233" duration="4403000" />
+      <workItem from="1619078391166" duration="2080000" />
     </task>
     <servers />
   </component>

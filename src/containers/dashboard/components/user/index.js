@@ -12,6 +12,7 @@ export default props => {
 		followingCount,
 		openFollowerModal,
 		disabledLink,
+		unfollowUser,
 	} = props;
 
 	const onUserFollowerClick = (title, type) => {
@@ -29,8 +30,16 @@ export default props => {
 						<div className="user-info-full-name">{name}</div>
 						<div className="user-info-user-name">{username}</div>
 						<div className="user-info-user-bio">{bio}</div>
-						<Button type="secondary-outline" size="sm" onClick={profileOnClick} classes="mt-3" loading={false}>
-							Edit
+						<Button
+							type="secondary-outline"
+							size="sm"
+							onClick={() => {
+								disabledLink ? unfollowUser(username) : profileOnClick();
+							}}
+							classes="mt-3"
+							loading={false}
+						>
+							{disabledLink ? 'Unfollow' : 'Edit'}
 						</Button>
 					</div>
 				</div>

@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import Searchbar from '../../../../components/searchbar';
 import Button from '../../../../components/button';
-import { History } from '../../../../helper/history';
 
 export default props => {
 	const { searchFilterRef, filter, username, setSearchFilter, setTypeFilter } = props;
@@ -52,15 +51,6 @@ export default props => {
 					</div>
 				)}
 			</div>
-			<Button
-				type="success"
-				size="sm"
-				onClick={() => History.push(`/user/${username}/create-repository`)}
-				classes="ml-2"
-				loading={false}
-			>
-				<div>New</div>
-			</Button>
 		</div>
 	);
 };

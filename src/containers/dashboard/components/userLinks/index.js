@@ -13,9 +13,13 @@ export default props => {
 									item.path && (
 										<div className="user-info-link-item" key={key}>
 											<span className="mr-2">{item.name}</span>
-											<a href={item.path} className="user-info-link-item-link" target="_blank">
-												{item.path}
-											</a>
+											{item.path.includes('https') ? (
+												<a href={item.path} className="user-info-link-item-link" target="_blank">
+													{item.path}
+												</a>
+											) : (
+												<span className="user-info-link-item-link">{item.path}</span>
+											)}
 										</div>
 									)
 								);

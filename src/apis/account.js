@@ -13,5 +13,5 @@ export const getUserFollowingListService = postData => {
 };
 
 export const unfollowUserService = postData => {
-	return ApiCaller({ needToken: true }).delete(`${process.env.REACT_APP_API_URL}/user/following/${postData}`);
+	return ApiCaller({ needToken: false }).delete(`${process.env.REACT_APP_API_URL}/user/following/${postData}`);
 };
