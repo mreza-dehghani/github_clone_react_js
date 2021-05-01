@@ -5,7 +5,7 @@ import variables from '../../constants/styleVariables';
 export const Wrapper = styled.div`
 	background-color: ${variables.colors.white};
 	width: 100%;
-	//height: calc(100vh - ${pxToRem(65)}rem);
+	height: 100vh;
 	.header {
 		height: ${pxToRem(80)}rem;
 		background-color: ${variables.colors.white};
@@ -81,6 +81,7 @@ export const Main = styled.div`
 	background-color: ${variables.colors.white};
 	margin-top: ${pxToRem(10)}rem;
 	min-height: ${pxToRem(250)}rem;
+	max-height: ${pxToRem(400)}rem;
 	border: 1px solid ${variables.colors.WhiteLilac[0]};
 	overflow: hidden;
 	.repository-main-header {
@@ -94,7 +95,7 @@ export const Main = styled.div`
 		align-items: center;
 	}
 	.repository-main-list {
-		padding: ${pxToRem(10)}rem;
+		//padding: ${pxToRem(10)}rem;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -107,6 +108,26 @@ export const Main = styled.div`
 			cursor: pointer;
 			&:last-child {
 				margin-bottom: 0;
+			}
+		}
+		.repository-main-branches {
+			min-height: ${pxToRem(200)}rem;
+			max-height: ${pxToRem(250)}rem;
+			overflow: auto;
+			width: 100%;
+			padding: ${pxToRem(10)}rem;
+			.repository-main-branches-item {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				margin-bottom: ${pxToRem(10)}rem;
+				padding: ${pxToRem(10)}rem;
+				border: 1px solid ${variables.colors.WhiteLilac[0]};
+				border-radius: ${pxToRem(8)}rem;
+				cursor: pointer;
+				width: 100%;
+				.repository-main-branches-title {
+				}
 			}
 		}
 	}

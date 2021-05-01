@@ -11,6 +11,18 @@ const initialState = {
 		loading: false,
 		data: [],
 	},
+	getRepositoryBranches: {
+		loading: false,
+		data: [],
+	},
+	getRepositoryCommits: {
+		loading: false,
+		data: [],
+	},
+	getRepositoryLanguages: {
+		loading: false,
+		data: {},
+	},
 };
 
 const Repository = (state = initialState, { type, payload }) => {
@@ -107,6 +119,62 @@ const Repository = (state = initialState, { type, payload }) => {
 			return {
 				...state,
 				getRepository: { data: [], loading: false },
+			};
+
+		case types.GET_REPOSITORY_BRANCHES_REQUEST:
+			return {
+				...state,
+				getRepositoryBranches: { ...state.getRepositoryBranches, loading: true },
+			};
+		case types.GET_REPOSITORY_BRANCHES_SUCCESS:
+			return {
+				...state,
+				getRepositoryBranches: { data: payload, loading: false },
+			};
+		case types.GET_REPOSITORY_BRANCHES_FAILURE:
+			return {
+				...state,
+				getRepositoryBranches: { data: [], loading: false },
+			};
+
+		case types.GET_REPOSITORY_COMMITS_REQUEST:
+			return {
+				...state,
+				getRepositoryCommits: { ...state.getRepositoryCommits, loading: true },
+			};
+		case types.GET_REPOSITORY_COMMITS_SUCCESS:
+			return {
+				...state,
+				getRepositoryCommits: { data: payload, loading: false },
+			};
+		case types.GET_REPOSITORY_COMMITS_FAILURE:
+			return {
+				...state,
+				getRepositoryCommits: { data: [], loading: false },
+			};
+
+		case types.GET_REPOSITORY_LANGUAGES_REQUEST:
+			return {
+				...state,
+				getRepositoryLanguages: { ...state.getRepositoryLanguages, loading: true },
+			};
+		case types.GET_REPOSITORY_LANGUAGES_SUCCESS:
+			return {
+				...state,
+				getRepositoryLanguages: {
+					data: {
+						...payload,
+						totalCounts: Object.keys(payload).map(key => {
+							return payload[key];
+						}),
+					},
+					loading: false,
+				},
+			};
+		case types.GET_REPOSITORY_LANGUAGES_FAILURE:
+			return {
+				...state,
+				getRepositoryLanguages: { data: {}, loading: false },
 			};
 
 		default:

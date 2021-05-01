@@ -6,14 +6,10 @@
       <change beforePath="$PROJECT_DIR$/src/actions/repository.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/repository.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/apis/repository.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/apis/repository.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/constants/actionTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/actionTypes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/dashboard/components/followModal/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/dashboard/components/followModal/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/dashboard/components/user/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/dashboard/components/user/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/dashboard/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/dashboard/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/dashboard/style.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/dashboard/style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/repository/components/about/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/repository/components/about/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/repository/components/branch/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/repository/components/branch/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/repository/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/repository/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/repository/style.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/repository/style.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layout/dashboard/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layout/dashboard/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layout/dashboard/style.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layout/dashboard/style.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/reducers/repository.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/repository.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sagas/repository.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sagas/repository.js" afterDir="false" />
     </list>
@@ -111,7 +107,8 @@
       <workItem from="1619500856936" duration="23000" />
       <workItem from="1619507710507" duration="596000" />
       <workItem from="1619681165155" duration="8394000" />
-      <workItem from="1619849243390" duration="6520000" />
+      <workItem from="1619849243390" duration="6599000" />
+      <workItem from="1619880798763" duration="9213000" />
     </task>
     <servers />
   </component>
