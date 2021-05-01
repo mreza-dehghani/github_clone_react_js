@@ -3,7 +3,8 @@ import { pxToRem } from '../../helper/style';
 import variables from '../../constants/styleVariables';
 
 export const Wrapper = styled.div`
-	width: 100%;
+	width: ${pxToRem(1128)}rem;
+	margin: auto;
 	display: flex;
 	justify-content: flex-start;
 	align-items: flex-start;

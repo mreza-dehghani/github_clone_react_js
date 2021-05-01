@@ -7,6 +7,10 @@ const initialState = {
 		initialData: [],
 		isFilter: false,
 	},
+	getRepository: {
+		loading: false,
+		data: [],
+	},
 };
 
 const Repository = (state = initialState, { type, payload }) => {
@@ -87,6 +91,22 @@ const Repository = (state = initialState, { type, payload }) => {
 					data: [...state.getRepositoryList.initialData],
 					isFilter: false,
 				},
+			};
+
+		case types.GET_REPOSITORY_REQUEST:
+			return {
+				...state,
+				getRepository: { ...state.getRepository, loading: true },
+			};
+		case types.GET_REPOSITORY_SUCCESS:
+			return {
+				...state,
+				getRepository: { data: payload, loading: false },
+			};
+		case types.GET_REPOSITORY_FAILURE:
+			return {
+				...state,
+				getRepository: { data: [], loading: false },
 			};
 
 		default:

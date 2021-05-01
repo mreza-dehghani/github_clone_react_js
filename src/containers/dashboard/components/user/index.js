@@ -29,7 +29,7 @@ export default props => {
 						<img src={avatar} alt="avatar" className="user-info-avatar" />
 						<div className="user-info-full-name">{name}</div>
 						<div className="user-info-user-name">{username}</div>
-						<div className="user-info-user-bio">{bio}</div>
+						<div className="user-info-user-bio text-center">{bio}</div>
 						<Button
 							type="secondary-outline"
 							size="sm"

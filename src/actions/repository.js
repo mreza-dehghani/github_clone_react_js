@@ -41,3 +41,22 @@ export const clearRepositoryFilterByType = () => {
 		type: types.CLEAR_REPOSITORY_FILTER_BY_TYPE,
 	};
 };
+
+export const getRepository = postData => {
+	console.log(postData);
+	return {
+		type: types.GET_REPOSITORY_REQUEST,
+		postData,
+	};
+};
+export const getRepositorySuccess = data => {
+	return {
+		type: types.GET_REPOSITORY_SUCCESS,
+		payload: data,
+	};
+};
+export const getRepositoryFailure = () => {
+	return {
+		type: types.GET_REPOSITORY_FAILURE,
+	};
+};

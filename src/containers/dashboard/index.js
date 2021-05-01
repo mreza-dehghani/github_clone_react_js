@@ -33,6 +33,7 @@ const Dashboard = props => {
 		getUserFollowingListLoading,
 		getUserFollowingListData,
 		unfollowUser,
+		unfollowUserLoading,
 		clearData,
 	} = props;
 	const router = useParams();
@@ -40,6 +41,7 @@ const Dashboard = props => {
 	const paramsUsername = router.username;
 	const [searchFilter, setSearchFilter] = useState(null);
 	const [typeFilter, setTypeFilter] = useState(null);
+	const [activeUnfollowId, setActiveUnfollowId] = useState(null);
 	const [showFollowModal, setShowFollowModal] = useState({
 		show: false,
 		title: '',
@@ -53,9 +55,10 @@ const Dashboard = props => {
 		} else {
 			getOtherUserInfo(paramsUsername);
 		}
-		fetch(`${process.env.REACT_APP_API_URL}/repos/mreza-dehghani/github_clone_react_js`)
-			.then(res => res.json())
-			.then(result => console.log(result));
+		// fetch(`${process.env.REACT_APP_API_URL}/repos/mreza-dehghani/github_clone_react_js`)
+		// 	.then(res => res.json())
+		// 	.then(result => console.log(result));
+		fetch('https://api.github.com/repos/mreza-dehghani/github_clone_react_js/commits').then(res => console.log(res));
 		return () => {
 			clearData();
 		};
@@ -101,6 +104,9 @@ const Dashboard = props => {
 				getUserFollowingListLoading={getUserFollowingListLoading}
 				getUserFollowingListData={getUserFollowingListData}
 				unfollowUser={unfollowUser}
+				unfollowUserLoading={unfollowUserLoading}
+				activeUnfollowId={activeUnfollowId}
+				setActiveUnfollowId={setActiveUnfollowId}
 			/>
 			{getUserInfoLoading || getRepositoryListLoading || getUserPublicEventsLoading ? (
 				<FullScreenLoading />
@@ -191,6 +197,7 @@ const mapStateToProps = state => {
 		getUserFollowerListData: state.Account.getUserFollowerList.data,
 		getUserFollowingListLoading: state.Account.getUserFollowingList.loading,
 		getUserFollowingListData: state.Account.getUserFollowingList.data,
+		unfollowUserLoading: state.Account.unfollowUser.loading,
 	};
 };
 
