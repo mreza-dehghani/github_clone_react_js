@@ -17,6 +17,9 @@ export default props => {
 		getUserFollowingListLoading,
 		getUserFollowingListData,
 		unfollowUser,
+		unfollowUserLoading,
+		activeUnfollowId,
+		setActiveUnfollowId,
 	} = props;
 
 	useEffect(() => {
@@ -63,10 +66,14 @@ export default props => {
 					return (
 						<User
 							onLinkClick={onLinkClick}
-							onBtnClick={username => unfollowUser(username)}
+							onBtnClick={username => {
+								unfollowUser(username);
+								setActiveUnfollowId(item.id);
+							}}
 							key={key}
 							item={item}
 							type={showFollowModal.type}
+							loading={unfollowUserLoading && activeUnfollowId === item.id}
 						/>
 					);
 				})}
@@ -74,7 +81,7 @@ export default props => {
 	);
 };
 
-const User = ({ type, item, onLinkClick, onBtnClick }) => {
+const User = ({ type, item, onLinkClick, onBtnClick, loading }) => {
 	return (
 		<div className="d-flex justify-content-between align-items-center follower-container">
 			<div className="d-flex justify-content-between align-items-center">
@@ -88,7 +95,7 @@ const User = ({ type, item, onLinkClick, onBtnClick }) => {
 				</div>
 			</div>
 			<Button type="secondary-outline" size="sm" onClick={() => onBtnClick(item.login)} classes="py-1" loading={false}>
-				<div>{type === 'following' ? 'Unfollow' : 'Profile'}</div>
+				{loading ? 'Loading...' : <div>{type === 'following' ? 'Unfollow' : 'Profile'}</div>}
 			</Button>
 		</div>
 	);

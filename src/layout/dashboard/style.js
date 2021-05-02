@@ -6,11 +6,11 @@ export const ContainerFluid = styled.div`
 	width: 100%;
 	margin: 0;
 	padding: 0;
-	overflow: hidden;
+	//overflow: hidden;
 `;
 
 export const Main = styled.div`
-	width: ${pxToRem(1128)}rem;
+	width: 100%;
 	margin: ${pxToRem(62)}rem auto 0 auto;
 `;
 

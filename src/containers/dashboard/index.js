@@ -33,6 +33,7 @@ const Dashboard = props => {
 		getUserFollowingListLoading,
 		getUserFollowingListData,
 		unfollowUser,
+		unfollowUserLoading,
 		clearData,
 	} = props;
 	const router = useParams();
@@ -40,6 +41,7 @@ const Dashboard = props => {
 	const paramsUsername = router.username;
 	const [searchFilter, setSearchFilter] = useState(null);
 	const [typeFilter, setTypeFilter] = useState(null);
+	const [activeUnfollowId, setActiveUnfollowId] = useState(null);
 	const [showFollowModal, setShowFollowModal] = useState({
 		show: false,
 		title: '',
@@ -53,9 +55,10 @@ const Dashboard = props => {
 		} else {
 			getOtherUserInfo(paramsUsername);
 		}
-		// fetch(`${process.env.REACT_APP_API_URL}/users/mreza-dehghani/followers`)
+		// fetch(`${process.env.REACT_APP_API_URL}/repos/mreza-dehghani/github_clone_react_js`)
 		// 	.then(res => res.json())
 		// 	.then(result => console.log(result));
+		fetch('https://api.github.com/repos/mreza-dehghani/github_clone_react_js/commits').then(res => console.log(res));
 		return () => {
 			clearData();
 		};
@@ -101,72 +104,80 @@ const Dashboard = props => {
 				getUserFollowingListLoading={getUserFollowingListLoading}
 				getUserFollowingListData={getUserFollowingListData}
 				unfollowUser={unfollowUser}
+				unfollowUserLoading={unfollowUserLoading}
+				activeUnfollowId={activeUnfollowId}
+				setActiveUnfollowId={setActiveUnfollowId}
 			/>
 			{getUserInfoLoading || getRepositoryListLoading || getUserPublicEventsLoading ? (
 				<FullScreenLoading />
 			) : (
 				<>
-					<Sidebar>
-						<User
-							avatar={getUserInfoData.avatar_url}
-							name={getUserInfoData.name}
-							username={getUserInfoData.login}
-							bio={getUserInfoData.bio}
-							profileOnClick={() => console.log(true)}
-							followersCount={getUserInfoData.followers}
-							followingCount={getUserInfoData.following}
-							openFollowerModal={(title, type) => openFollowerModal(title, type)}
-							disabledLink={paramsUsername !== userInfo.login}
-						/>
-						{getUserInfoData.links && <UserLinks data={getUserInfoData.links} />}
-					</Sidebar>
-					<Main>
-						<div className="repos">
-							<RepositoryFilter
-								filter={typeFilter}
-								username={getUserInfoData.login}
-								setSearchFilter={setSearchFilter}
-								setTypeFilter={setTypeFilter}
-								searchFilterRef={searchFilterRef}
-							/>
-							<div className="d-flex justify-content-start align-items-start">
-								{isRepositoryFilter && (
-									<div className="px-3 py-1 mx-2 btn btn-secondary" onClick={clearFilter}>
-										filter <i className="fa fa-close" />
+					{Object.keys(getUserInfoData).length > 0 && (
+						<>
+							<Sidebar>
+								<User
+									avatar={getUserInfoData.avatar_url}
+									name={getUserInfoData.name}
+									username={getUserInfoData.login}
+									bio={getUserInfoData.bio}
+									profileOnClick={() => console.log(true)}
+									followersCount={getUserInfoData.followers}
+									followingCount={getUserInfoData.following}
+									openFollowerModal={(title, type) => openFollowerModal(title, type)}
+									disabledLink={paramsUsername !== userInfo.login}
+									unfollowUser={unfollowUser}
+								/>
+								{getUserInfoData.links && <UserLinks data={getUserInfoData.links} />}
+							</Sidebar>
+							<Main>
+								<div className="repos">
+									<RepositoryFilter
+										filter={typeFilter}
+										username={getUserInfoData.login}
+										setSearchFilter={setSearchFilter}
+										setTypeFilter={setTypeFilter}
+										searchFilterRef={searchFilterRef}
+									/>
+									<div className="d-flex justify-content-start align-items-start">
+										{isRepositoryFilter && (
+											<div className="px-3 py-1 mx-2 btn btn-secondary" onClick={clearFilter}>
+												filter <i className="fa fa-close" />
+											</div>
+										)}
+									</div>
+									<div className="d-flex justify-content-start align-items-start flex-wrap ">
+										{getRepositoryListData && getRepositoryListData.length > 0 ? (
+											getRepositoryListData.map((item, key) => {
+												return (
+													<Repository
+														key={key}
+														username={getUserInfoData.login}
+														updatedAt={item.updated_at}
+														name={item.name}
+														lang={item.language}
+														description={item.description}
+													/>
+												);
+											})
+										) : (
+											<div className="p-2 my-4 mx-2 badge-warning">
+												<b>{getUserInfoData.login}</b> doesn't have any repositories that match.
+											</div>
+										)}
+									</div>
+								</div>
+								{getUserPublicEventsData.length > 0 && (
+									<div className="px-3">
+										<div className="mt-4 mb-3">Contribution activity</div>
+										{getUserPublicEventsData &&
+											getUserPublicEventsData.map((item, index) => {
+												return <Activities key={index} date={item.created_at} items={item.items} />;
+											})}
 									</div>
 								)}
-							</div>
-							<div className="d-flex justify-content-start align-items-start flex-wrap ">
-								{getRepositoryListData && getRepositoryListData.length > 0 ? (
-									getRepositoryListData.map((item, key) => {
-										return (
-											<Repository
-												key={key}
-												username={getUserInfoData.login}
-												updatedAt={item.updated_at}
-												name={item.name}
-												lang={item.language}
-												description={item.description}
-											/>
-										);
-									})
-								) : (
-									<div className="p-2 my-4 mx-2 badge-warning">
-										<b>{getUserInfoData.login}</b> doesn't have any repositories that match.
-									</div>
-								)}
-							</div>
-						</div>
-						{getUserPublicEventsData.length > 0 && (
-							<div className="px-3">
-								<div className="mt-4 mb-3">Contribution activity</div>
-								{getUserPublicEventsData &&
-									getUserPublicEventsData.map((item, index) => {
-										return <Activities key={index} date={item.created_at} items={item.items} />;
-									})}
-							</div>
-						)}
-					</Main>
+							</Main>
+						</>
+					)}
 				</>
 			)}
 		</Wrapper>
@@ -186,6 +197,7 @@ const mapStateToProps = state => {
 		getUserFollowerListData: state.Account.getUserFollowerList.data,
 		getUserFollowingListLoading: state.Account.getUserFollowingList.loading,
 		getUserFollowingListData: state.Account.getUserFollowingList.data,
+		unfollowUserLoading: state.Account.unfollowUser.loading,
 	};
 };
 
