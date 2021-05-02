@@ -1,5 +1,4 @@
 export default ({ data }) => {
-	console.log(data);
 	return (
 		<div className="repository-main-branches">
 			<b>Branches:</b>

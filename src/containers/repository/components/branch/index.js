@@ -1,6 +1,6 @@
 import Button from '../../../../components/button';
 
-export default ({ defaultBranch, branches, toggleBranches }) => {
+export default ({ defaultBranch, branches, toggleBranches, toggleCloneCode }) => {
 	return (
 		<div className="d-flex justify-content-between align-items-center">
 			<div className="d-flex justify-content-start align-items-center">
@@ -18,7 +18,7 @@ export default ({ defaultBranch, branches, toggleBranches }) => {
 					</div>
 				</div>
 			</div>
-			<Button type="success" size="sm" onClick={() => console.log(true)} classes="ml-2" loading={false}>
+			<Button type="success" size="sm" onClick={toggleCloneCode} classes="ml-2" loading={false}>
 				<div className="d-flex justify-content-center align-items-center w-100">
 					<i className="fa fa-arrow-down mr-1" />
 					<b>Code</b>

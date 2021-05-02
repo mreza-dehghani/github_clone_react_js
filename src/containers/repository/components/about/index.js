@@ -3,7 +3,6 @@ import { getPercent } from '../../../../helper/math';
 
 export default props => {
 	const { description, languages } = props;
-	console.log(languages);
 	return (
 		<About>
 			<div className="repository-title">About</div>

@@ -10,6 +10,7 @@ import emptyImg from '../../assets/img/profile-first-pr.svg';
 import { getDifferenceTimeFromNow } from '../../helper/date';
 import FullScreenLoading from '../../components/fullScreenLoading';
 import Branches from './components/branches';
+import CloneCodeModal from './components/cloneCodeModal';
 
 const Repository = props => {
 	const {
@@ -23,7 +24,7 @@ const Repository = props => {
 	} = props;
 	const { username, repo } = useParams();
 	const [isShowBranches, setIsShowBranches] = useState(false);
-	const [isShowCommits, setIsShowCommits] = useState(false);
+	const [showModal, setShowModal] = useState(false);
 
 	useEffect(() => {
 		getRepository({ username, repo });
@@ -32,8 +33,13 @@ const Repository = props => {
 		};
 	}, []);
 
+	const toggleModal = () => {
+		setShowModal(!showModal);
+	};
+
 	return (
 		<Wrapper>
+			<CloneCodeModal show={showModal} closeHandler={toggleModal} title="Clone" cloneCodeUrl={data?.clone_url} />
 			{loading ? (
 				<FullScreenLoading />
 			) : (
@@ -49,11 +55,12 @@ const Repository = props => {
 								defaultBranch={data?.default_branch}
 								branches={getRepositoryBranchesData}
 								toggleBranches={() => setIsShowBranches(!isShowBranches)}
+								toggleCloneCode={toggleModal}
 							/>
 							<Main>
 								<div className="repository-main-header">
 									<div>
-										<b>{data && data.owner && data.owner.login}</b>
+										<b>{data?.owner?.login}</b>
 										<span className="ml-2">updated at {getDifferenceTimeFromNow(data?.updated_at)}</span>
 									</div>
 									<div>
@@ -62,8 +69,11 @@ const Repository = props => {
 									</div>
 								</div>
 								<div className="repository-main-list">
-									{!isShowBranches && !isShowCommits && <img src={emptyImg} alt="" style={{ width: '60%' }} />}
-									{isShowBranches && <Branches data={getRepositoryBranchesData} />}
+									{!isShowBranches ? (
+										<img src={emptyImg} alt="" style={{ width: '60%' }} />
+									) : (
+										<Branches data={getRepositoryBranchesData} />
+									)}
 								</div>
 							</Main>
 							<ReadMe>

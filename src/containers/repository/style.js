@@ -12,6 +12,28 @@ export const Wrapper = styled.div`
 		padding: 0 ${pxToRem(40)}rem;
 		border-bottom: 1px solid ${variables.colors.Alto};
 	}
+	.clone-code-title {
+		font-size: ${variables.fontSize.sm};
+		font-weight: ${variables.fontWeight.semibold};
+		color: ${variables.colors.black};
+	}
+	.clone-code-text {
+		font-size: ${variables.fontSize.xs};
+		font-weight: ${variables.fontWeight.normal};
+		color: ${variables.colors.Scorpion};
+	}
+	.clone-code-input-url {
+		width: 100%;
+		font-size: ${variables.fontSize.sm};
+		font-weight: ${variables.fontWeight.normal};
+		padding: ${pxToRem(5)}rem ${pxToRem(6)}rem;
+		border-radius: ${pxToRem(6)}rem;
+		margin: ${pxToRem(10)}rem 0;
+		border: 1px solid ${variables.colors.Gray};
+		&:focus {
+			outline: none;
+		}
+	}
 `;
 
 export const Container = styled.div`
