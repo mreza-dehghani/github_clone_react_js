@@ -8,7 +8,6 @@ export default props => {
 	const {
 		showFollowModal,
 		closeHandler,
-		clickHandler,
 		getUserFollowerList,
 		getUserFollowingList,
 		username,
@@ -100,7 +99,9 @@ const User = ({ type, item, onLinkClick, onBtnClick, loading }) => {
 			<Button
 				type="secondary-outline"
 				size="sm"
-				onClick={() => onBtnClick(item.login)}
+				onClick={() => {
+					type === 'following' ? onBtnClick(item.login) : onLinkClick(`/user/${item.login}`);
+				}}
 				classes="py-1 ml-1"
 				loading={false}
 			>

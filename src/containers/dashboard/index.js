@@ -55,10 +55,6 @@ const Dashboard = props => {
 		} else {
 			getOtherUserInfo(paramsUsername);
 		}
-		// fetch(`${process.env.REACT_APP_API_URL}/repos/mreza-dehghani/github_clone_react_js`)
-		// 	.then(res => res.json())
-		// 	.then(result => console.log(result));
-		fetch('https://api.github.com/repos/mreza-dehghani/github_clone_react_js/commits').then(res => console.log(res));
 		return () => {
 			clearData();
 		};

@@ -97,6 +97,6 @@ function* workerUnfollowUser(action) {
 			toast.error(error.message.toString());
 			console.log(error);
 		}
-		yield put(ActionAccount.getUserFollowerListFailure());
+		yield put(ActionAccount.unfollowUserFailure());
 	}
 }
