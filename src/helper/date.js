@@ -1,5 +1,7 @@
 import moment from 'moment';
 
+const date = new Date();
+
 export const getDifferenceTimeFromNow = date => {
 	const year = date?.substring(0, 4);
 	const month = date?.substring(5, 7);
@@ -22,4 +24,8 @@ export const getFullDate = date => {
 	const hour = date?.substring(11, 13);
 	const min = date?.substring(14, 16);
 	return year && month && day && hour && min ? `${year}-${month}-${day} ${hour} : ${min} ` : '---';
+};
+
+export const getYear = () => {
+	return date.getFullYear();
 };
