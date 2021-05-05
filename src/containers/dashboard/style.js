@@ -3,18 +3,18 @@ import { pxToRem } from '../../helper/style';
 import variables from '../../constants/styleVariables';
 
 export const Wrapper = styled.div`
-	width: ${pxToRem(1128)}rem;
-	margin: auto;
+	width: 100%;
 	display: flex;
 	justify-content: flex-start;
 	align-items: flex-start;
-	padding: ${pxToRem(30)}rem 0;
+	flex-wrap: wrap;
+	padding: ${pxToRem(30)}rem;
 	.follower-container {
 		border-bottom: 1px solid ${variables.colors.WhiteLilac[0]};
 		padding: ${pxToRem(8)}rem 0;
 		.user-info-avatar {
-			height: ${pxToRem(60)}rem;
-			width: ${pxToRem(60)}rem;
+			height: ${pxToRem(40)}rem;
+			width: ${pxToRem(40)}rem;
 			border-radius: 50%;
 		}
 		.user-info-full-name {
@@ -23,11 +23,25 @@ export const Wrapper = styled.div`
 			font-weight: ${variables.fontWeight.semibold};
 		}
 	}
+	@media (min-width: ${variables.breakPoints.laptop}px) {
+		width: ${pxToRem(1128)}rem;
+		padding: ${pxToRem(30)}rem 0;
+		margin: auto;
+		flex-wrap: nowrap;
+
+		.follower-container {
+			padding: ${pxToRem(8)}rem 0;
+			.user-info-avatar {
+				height: ${pxToRem(60)}rem;
+				width: ${pxToRem(60)}rem;
+			}
+		}
+	}
 `;
 
 export const Sidebar = styled.div`
-	width: ${pxToRem(255)}rem;
-	margin: ${pxToRem(10)}rem;
+	width: 100%;
+
 	.user-info {
 		.user-info-header {
 			border-bottom: 1px solid ${variables.colors.WhiteLilac[0]};
@@ -89,19 +103,23 @@ export const Sidebar = styled.div`
 			}
 		}
 	}
+	@media (min-width: ${variables.breakPoints.laptop}px) {
+		width: ${pxToRem(255)}rem;
+		margin: ${pxToRem(10)}rem;
+	}
 `;
 
 export const Main = styled.div`
 	border-radius: ${pxToRem(8)}rem;
-	width: ${pxToRem(850)}rem;
+	width: 100%;
 	background-color: ${variables.colors.white};
-	margin: ${pxToRem(10)}rem;
+	margin: ${pxToRem(20)}rem 0;
 	min-height: 500px;
 	padding: ${pxToRem(10)}rem;
 	.repository-card {
 		border-radius: ${pxToRem(8)}rem;
 		border: 1px solid ${variables.colors.AthensGray};
-		width: calc(100% * (1 / 2) - ${pxToRem(20)}rem);
+		width: 100%;
 		margin: ${pxToRem(9)}rem;
 		padding: ${pxToRem(16)}rem;
 		.repository-link {
@@ -121,7 +139,7 @@ export const Main = styled.div`
 			font-size: ${variables.fontSize.xs};
 			font-weight: ${variables.fontWeight.semibold};
 			border-radius: 8px;
-			width: ${pxToRem(300)}rem;
+			width: ${pxToRem(200)}rem;
 			min-height: 68px;
 			background-color: ${variables.colors.white};
 			box-shadow: 0 0 30px ${variables.colors.WhiteLilac[0]};
@@ -161,6 +179,21 @@ export const Main = styled.div`
 			font-size: ${variables.fontSize.sm};
 			color: ${variables.colors.Scorpion};
 			font-weight: ${variables.fontWeight.semibold};
+		}
+	}
+
+	@media (min-width: ${variables.breakPoints.laptop}px) {
+		width: ${pxToRem(850)}rem;
+		margin: ${pxToRem(10)}rem;
+
+		.repository-filter {
+			.repository-type-dropdown {
+				width: ${pxToRem(300)}rem;
+			}
+		}
+
+		.repository-card {
+			width: calc(100% * (1 / 2) - ${pxToRem(20)}rem);
 		}
 	}
 `;

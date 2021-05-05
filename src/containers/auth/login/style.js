@@ -19,17 +19,25 @@ export const LoginBoxContainer = styled.div`
 `;
 
 export const LoginBox = styled.div`
-	width: ${pxToRem(600)}rem;
+	width: ${pxToRem(320)}rem;
 	height: ${pxToRem(300)}rem;
-	//background-color: ${variables.colors.Shamrock};
 	border-radius: ${pxToRem(10)}rem;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	.login-form-wrapper {
-		width: ${pxToRem(450)}rem;
+		width: ${pxToRem(300)}rem;
 		margin: auto;
+	}
+
+	@media (min-width: ${variables.breakPoints.laptop}px) {
+		width: ${pxToRem(600)}rem;
+
+		.login-form-wrapper {
+			width: ${pxToRem(450)}rem;
+			margin: auto;
+		}
 	}
 `;
 

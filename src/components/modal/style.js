@@ -24,7 +24,7 @@ export const ModalWrapper = styled.div`
 		border-radius: 10px;
 		position: relative;
 		z-index: 99999;
-		min-width: 473px;
+		min-width: 320px;
 		//min-height: 32%;
 		//min-height: 214px;
 		-webkit-box-shadow: 0 2px 14px 0 #999;
@@ -103,5 +103,12 @@ export const ModalWrapper = styled.div`
 				width: 8px;
 			}
 		}
+	}
+
+	@media (min-width: 1024px) {
+    .modal-container {
+      min-width: 473px;
+      //min-height: 32%;
+      //min-height: 214px;
 	}
 `;

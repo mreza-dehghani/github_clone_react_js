@@ -31,12 +31,12 @@
 
 @media screen and (max-width: 768px) {
     ::-webkit-scrollbar {
-        width: 15px;
+        width: 5px;
     }
 }
 
 ::-webkit-scrollbar {
-     width: 10px;
+     width: 5px;
  }
 
 ::-webkit-scrollbar-track {
@@ -53,7 +53,7 @@
 /* Handle on hover */
 
 ::-webkit-scrollbar-thumb:hover {
-    background: rgba(220, 220, 228, 1);
+    background: #22ab8a;
 }
 
 ::selection {
@@ -83,4 +83,10 @@ a {
 
 .pointer {
     cursor: pointer;
+}
+
+.with-three-dot {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }

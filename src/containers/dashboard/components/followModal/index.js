@@ -89,12 +89,21 @@ const User = ({ type, item, onLinkClick, onBtnClick, loading }) => {
 					<img src={item.avatar_url} alt="user_avatar" className="user-info-avatar" />
 				</div>
 				<div className="ml-3">
-					<div onClick={() => onLinkClick(`/user/${item.login}`)} className="user-info-full-name pointer">
+					<div
+						onClick={() => onLinkClick(`/user/${item.login}`)}
+						className="user-info-full-name pointer with-three-dot"
+					>
 						{item.login}
 					</div>
 				</div>
 			</div>
-			<Button type="secondary-outline" size="sm" onClick={() => onBtnClick(item.login)} classes="py-1" loading={false}>
+			<Button
+				type="secondary-outline"
+				size="sm"
+				onClick={() => onBtnClick(item.login)}
+				classes="py-1 ml-1"
+				loading={false}
+			>
 				{loading ? 'Loading...' : <div>{type === 'following' ? 'Unfollow' : 'Profile'}</div>}
 			</Button>
 		</div>

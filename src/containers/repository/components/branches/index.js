@@ -7,9 +7,9 @@ export default ({ data }) => {
 				data.map((item, key) => {
 					return (
 						<div className="repository-main-branches-item" key={key}>
-							<div>
+							<div className="with-three-dot">
 								<b>{item.name}</b>
-								<span className="ml-3">{item.commit.sha}</span>
+								<span className="ml-3 ">{item.commit.sha}</span>
 							</div>
 							<i
 								className={`fa fa-${data.protected ? 'lock' : 'unlock'}`}

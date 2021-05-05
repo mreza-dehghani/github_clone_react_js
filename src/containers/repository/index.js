@@ -59,7 +59,7 @@ const Repository = props => {
 							/>
 							<Main>
 								<div className="repository-main-header">
-									<div>
+									<div className="with-three-dot">
 										<b>{data?.owner?.login}</b>
 										<span className="ml-2">updated at {getDifferenceTimeFromNow(data?.updated_at)}</span>
 									</div>
@@ -79,8 +79,10 @@ const Repository = props => {
 							<ReadMe>
 								<b>README.md</b>
 								<div className="px-2">
-									<div className="read-me-title">{repo}</div>
-									<p className="read-me-description">{data?.description}</p>
+									<div className="read-me-title with-three-dot" title={repo}>
+										{repo}
+									</div>
+									<p className="read-me-description ">{data?.description}</p>
 								</div>
 							</ReadMe>
 						</div>
