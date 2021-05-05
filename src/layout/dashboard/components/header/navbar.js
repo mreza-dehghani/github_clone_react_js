@@ -1,10 +1,13 @@
 import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
 
-export default () => {
+export default ({ show, toggle }) => {
 	const [active, setActive] = useState(null);
 	return (
-		<nav className="header-navbar">
+		<nav className={`header-navbar ${show ? 'header-navbar-show' : 'header-navbar-hide'}`}>
+			<div className="header-close-menu-icon" onClick={toggle}>
+				<i className="fa fa-times text-white" />
+			</div>
 			<ul className="header-navbar-list">
 				{navlist &&
 					navlist.map((navItem, key) => {

@@ -66,7 +66,7 @@ export const ButtonWrapper = styled.div`
 					font-size: ${variables.fontSize.xs};
 					font-weight: ${variables.fontWeight.semibold};
 					border-radius: 8px;
-					width: 134px;
+					width: 100px;
 					height: 32px;
 				`;
 			case 'md':
@@ -75,9 +75,25 @@ export const ButtonWrapper = styled.div`
 					font-size: ${variables.fontSize.base};
 					font-weight: ${variables.fontWeight.semibold};
 					border-radius: 8px;
-					width: 161px;
+					width: 134px;
 					height: 38px;
 				`;
 		}
 	}};
+	@media (min-width: 1024px) {
+		${props => {
+			switch (props.size) {
+				case 'sm':
+					return `
+					width: 134px;
+					height: 32px;
+				`;
+				case 'md':
+					return `
+					width: 161px;
+					height: 38px;
+				`;
+			}
+		}};
+	}
 `;

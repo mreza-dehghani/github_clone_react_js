@@ -14,6 +14,7 @@ export const FullPageLoadingWrapper = styled.div`
 	.loaderStyles {
 		top: 50%;
 		left: 50%;
+		transform: translate(-50%, 0);
 		position: absolute;
 	}
 	img {

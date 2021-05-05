@@ -1,5 +1,6 @@
 import React, { Suspense, useState } from 'react';
 import Header from './components/header';
+import Footer from './components/footer';
 import { Main, ContainerFluid } from './style';
 import { getLocalStorage } from '../../helper/localStorage';
 
@@ -21,6 +22,7 @@ export default ({ Component, route }) => {
 					<Component route={route} />
 				</Suspense>
 			</Main>
+			<Footer />
 		</ContainerFluid>
 	);
 };

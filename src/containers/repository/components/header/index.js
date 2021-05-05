@@ -3,7 +3,7 @@ import Button from '../../../../components/button';
 
 export default ({ userName, repoName, counts }) => {
 	return (
-		<div className="d-flex justify-content-between align-items-center header">
+		<div className="d-flex justify-content-between align-items-center flex-wrap flex-lg-nowrap header">
 			<div>
 				<Link to={`/user/${userName}`}>
 					<b>{userName}</b>

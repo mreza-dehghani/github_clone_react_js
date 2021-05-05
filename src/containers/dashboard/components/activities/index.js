@@ -16,7 +16,7 @@ export default props => {
 						<div className="mb-4 pb-1">
 							<div className="activities-title mb-1">{item.type}</div>
 							<div className="d-flex flex-column ">
-								<Link to={`/user/${item.repo.name}`} key={key}>
+								<Link to={`/user/${item.repo.name}`} key={key} className="with-three-dot">
 									{item.repo.url}
 								</Link>
 							</div>
