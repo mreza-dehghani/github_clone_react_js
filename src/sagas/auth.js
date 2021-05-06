@@ -21,7 +21,7 @@ function* workerLogin(action) {
 		setLocalStorage('userToken', data.node_id);
 		yield put(ActionAuth.loginSuccess(data));
 		if (response.status !== 404 && response.status === 200) {
-			History.replace(`/user/${data.login}`);
+			History.replace(`/${data.login}`);
 		}
 	} catch (error) {
 		if (error && error.message) {

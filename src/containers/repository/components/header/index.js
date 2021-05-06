@@ -5,11 +5,11 @@ export default ({ userName, repoName, counts }) => {
 	return (
 		<div className="d-flex justify-content-between align-items-center flex-wrap flex-lg-nowrap header">
 			<div>
-				<Link to={`/user/${userName}`}>
+				<Link to={`/${userName}`}>
 					<b>{userName}</b>
 				</Link>
 				<b className="mx-1">/</b>
-				<Link to={`/user/${userName}/${repoName}`}>
+				<Link to={`/${userName}/${repoName}`}>
 					<b>{repoName}</b>
 				</Link>
 			</div>

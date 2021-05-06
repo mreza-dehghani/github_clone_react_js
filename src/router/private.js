@@ -16,18 +16,13 @@ export const privateRoute = [
 		layout: 'dashboard',
 	},
 	{
-		path: '/user/:username',
-		component: Dashboard,
+		path: '/issues',
+		component: Issues,
 		layout: 'dashboard',
 	},
 	{
 		path: '/pulls',
 		component: Pulls,
-		layout: 'dashboard',
-	},
-	{
-		path: '/issues',
-		component: Issues,
 		layout: 'dashboard',
 	},
 	{
@@ -41,13 +36,18 @@ export const privateRoute = [
 		layout: 'dashboard',
 	},
 	{
-		path: '/user/:username/:repo',
+		path: '/:username/:repo',
 		component: Repository,
 		layout: 'dashboard',
 	},
 	{
-		path: '/user/:username/create-repository',
+		path: '/:username/create-repository',
 		component: CreateRepository,
+		layout: 'dashboard',
+	},
+	{
+		path: '/:username',
+		component: Dashboard,
 		layout: 'dashboard',
 	},
 ];
