@@ -84,14 +84,11 @@ const User = ({ type, item, onLinkClick, onBtnClick, loading }) => {
 	return (
 		<div className="d-flex justify-content-between align-items-center follower-container">
 			<div className="d-flex justify-content-between align-items-center">
-				<div onClick={() => onLinkClick(`/user/${item.login}`)} className="pointer">
+				<div onClick={() => onLinkClick(`/${item.login}`)} className="pointer">
 					<img src={item.avatar_url} alt="user_avatar" className="user-info-avatar" />
 				</div>
 				<div className="ml-3">
-					<div
-						onClick={() => onLinkClick(`/user/${item.login}`)}
-						className="user-info-full-name pointer with-three-dot"
-					>
+					<div onClick={() => onLinkClick(`/${item.login}`)} className="user-info-full-name pointer with-three-dot">
 						{item.login}
 					</div>
 				</div>

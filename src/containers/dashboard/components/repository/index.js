@@ -5,7 +5,7 @@ export default props => {
 	const { username, name, updatedAt, lang, description } = props;
 	return (
 		<div className="repository-card">
-			<Link to={`/user/${username}/${name}`} className="repository-link">
+			<Link to={`/${username}/${name}`} className="repository-link">
 				{name}
 			</Link>
 			<div>{description}</div>

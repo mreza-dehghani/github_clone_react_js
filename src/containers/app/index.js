@@ -5,7 +5,7 @@ import { History } from '../../helper/history';
 import Routes from '../../router';
 import { withRouter } from 'react-router';
 import NotFound from '../../components/notFound';
-import { getLocalStorage, getLocalStorageWithExpiry } from '../../helper/localStorage';
+import { getLocalStorage } from '../../helper/localStorage';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
 import '../../style/global/index.css';
@@ -14,12 +14,14 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 export default () => {
 	const layoutManage = (item, key) => {
+		console.log(item.path);
 		switch (item.layout) {
 			case 'dashboard':
 				return (
 					<Route
 						key={key}
 						exact={true}
+						strict={true}
 						path={item.path}
 						render={withRouter(route => (
 							<DashboardLayout route={route} Component={item.component} options={item.options || {}} />
@@ -31,6 +33,7 @@ export default () => {
 					<Route
 						key={key}
 						exact={true}
+						strict={true}
 						path={item.path}
 						render={withRouter(route => (
 							<PublicLayout route={route} Component={item.component} options={item.options || {}} />
