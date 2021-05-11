@@ -7,6 +7,10 @@ const initialState = {
 		data: [],
 		initialData: [],
 	},
+	getPublicEvents: {
+		loading: false,
+		data: [],
+	},
 };
 
 const Activity = (state = initialState, { type, payload }) => {
@@ -56,6 +60,25 @@ const Activity = (state = initialState, { type, payload }) => {
 			return {
 				...state,
 				getUserPublicEvents: { data: [], initialData: [], loading: false },
+			};
+
+		case types.GET_PUBLIC_EVENTS_REQUEST:
+			return {
+				...state,
+				getPublicEvents: { ...state.getPublicEvents, loading: true },
+			};
+		case types.GET_PUBLIC_EVENTS_SUCCESS:
+			return {
+				...state,
+				getPublicEvents: {
+					data: payload,
+					loading: false,
+				},
+			};
+		case types.GET_PUBLIC_EVENTS_FAILURE:
+			return {
+				...state,
+				getPublicEvents: { data: [], loading: false },
 			};
 
 		default:

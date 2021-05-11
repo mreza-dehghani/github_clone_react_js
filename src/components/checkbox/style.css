@@ -1,0 +1,48 @@
+
+.label {
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 44px;
+    height: 22px;
+    background-color: grey;
+    display: block;
+    border-radius: 44px;
+    position: relative;
+    margin-bottom: 0;
+    position: relative;
+}
+
+.label-active {
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 44px;
+    height: 22px;
+    background-color: #543AAB;
+    display: block;
+    border-radius: 44px;
+    position: relative;
+    margin-bottom: 0;
+    position: relative;
+}
+
+.label-bulb {
+    position: absolute;
+    top: 2px;
+    left: 3px;
+    width: 18px;
+    height: 18px;
+    background-color: #fff;
+    border-radius: 40px;
+    transition: 300ms;
+}
+
+.label-bulb-active {
+    position: absolute;
+    top: 2px;
+    left: 50%;
+    width: 18px;
+    height: 18px;
+    background-color: #fff;
+    border-radius: 40px;
+    transition: 300ms;
+}

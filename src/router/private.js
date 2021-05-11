@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Home = React.lazy(() => import('../containers/home'));
+const Home = React.lazy(() => import('../containers/home/private'));
 const Dashboard = React.lazy(() => import('../containers/dashboard'));
 const Explore = React.lazy(() => import('../containers/explore'));
 const Pulls = React.lazy(() => import('../containers/pulls'));
