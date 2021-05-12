@@ -13,6 +13,7 @@ export default ({ Component, route }) => {
 
 	const toggleConfirmModal = () => {
 		setShowConfirmModal(!showConfirmModal);
+		setShowDropdown(!showDropdown);
 	};
 
 	const confirmHandler = async () => {

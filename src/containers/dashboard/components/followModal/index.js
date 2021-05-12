@@ -97,7 +97,7 @@ const User = ({ type, item, onLinkClick, onBtnClick, loading }) => {
 				type="secondary-outline"
 				size="sm"
 				onClick={() => {
-					type === 'following' ? onBtnClick(item.login) : onLinkClick(`/user/${item.login}`);
+					type === 'following' ? onBtnClick(item.login) : onLinkClick(`/${item.login}`);
 				}}
 				classes="py-1 ml-1"
 				loading={false}
