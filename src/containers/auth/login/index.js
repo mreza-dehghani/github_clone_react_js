@@ -19,7 +19,7 @@ const Login = props => {
 	return (
 		<Container>
 			<LoginBoxContainer>
-				<Title>Login</Title>
+				<Title>Sign In</Title>
 				<LoginBox>
 					<div className="login-form-wrapper">
 						<Form submit={username => submit(username)} loading={loginLoading} />

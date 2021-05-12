@@ -3,7 +3,7 @@ import { Avatar, Dropdown } from '../../style';
 import dropdownItems from './dropdownItems';
 import avatar from '../../../../assets/img/avatar.svg';
 
-export default ({ show, toggle, userInfo }) => {
+export default ({ show, toggle, userInfo, showConfirmModal }) => {
 	return (
 		<Avatar>
 			<div onClick={toggle}>
@@ -28,9 +28,9 @@ export default ({ show, toggle, userInfo }) => {
 					</div>
 					<div className="dropdown-item-footer">
 						<div className="dropdown-item-list">
-							<Link to="/login" exact className="dropdown-item">
+							<div className="dropdown-item" onClick={showConfirmModal}>
 								Sign out
-							</Link>
+							</div>
 						</div>
 					</div>
 				</Dropdown>

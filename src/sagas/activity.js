@@ -6,6 +6,7 @@ import * as activityApi from '../apis/activity';
 
 export function* watcherActivity() {
 	yield takeLatest(types.GET_USER_PUBLIC_EVENTS_REQUEST, workerGetUserPublicEvents);
+	yield takeLatest(types.GET_PUBLIC_EVENTS_REQUEST, workerGetPublicEvents);
 }
 
 function getUserPublicEvents(postData) {
@@ -22,5 +23,22 @@ function* workerGetUserPublicEvents(action) {
 			console.log(error);
 		}
 		yield put(ActionActivity.getUserPublicEventsFailure());
+	}
+}
+
+function getPublicEvents() {
+	return activityApi.getPublicEventsService();
+}
+function* workerGetPublicEvents() {
+	try {
+		const response = yield call(getPublicEvents);
+		const data = response && response.data;
+		yield put(ActionActivity.getPublicEventsSuccess(data));
+	} catch (error) {
+		if (error && error.message) {
+			toast.error(error.message.toString());
+			console.log(error);
+		}
+		yield put(ActionActivity.getPublicEventsFailure());
 	}
 }
