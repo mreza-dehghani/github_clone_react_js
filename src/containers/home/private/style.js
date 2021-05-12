@@ -95,12 +95,12 @@ export const Main = styled.div`
 
 	@media (min-width: ${variables.breakPoints.laptop}px) {
 		width: ${pxToRem(600)}rem;
-		margin-left: ${pxToRem(15)}rem;
-    margin-right: ${pxToRem(15)}rem;
+		margin: 0 ${pxToRem(15)}rem ${pxToRem(15)}rem ${pxToRem(15)}rem;
 
-    .public-events {
+		.public-events {
 			margin-right: ${pxToRem(25)}rem;
-    }
+		}
+	}
 `;
 
 export const ToggleTheme = styled.aside`
