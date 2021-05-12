@@ -5,24 +5,44 @@ import Event from './components/event';
 import LeftSidebar from './components/leftSidebar';
 import ToggleTheme from './components/toggleTheme';
 import { ActionActivity, ActionRepository } from '../../../actions';
+import { getLocalStorage } from '../../../helper/localStorage';
+import Spinner from '../../../components/spinner';
+import emptyImg from '../../../assets/img/profile-first-pr.svg';
 
 const Index = props => {
-	const { getPublicEvents, getUserRepository, clearData } = props;
+	const {
+		getRepositoryListData,
+		getPublicEventsLoading,
+		getPublicEventsData,
+		getPublicEvents,
+		getUserRepository,
+		clearData,
+	} = props;
+	const userInfo = getLocalStorage('userInfo');
 
 	useEffect(() => {
-		fetch('https://api.github.com/events')
-			.then(res => res.json())
-			.then(data => console.log(data));
+		getPublicEvents();
+		getUserRepository(userInfo.login);
+		return () => {
+			clearData();
+		};
 	}, []);
 
 	return (
 		<Wrapper className="container pt-5">
-			<LeftSidebar />
+			<LeftSidebar data={getRepositoryListData} username={userInfo.login} />
 			<Main>
 				<div className="public-events">
-					<Event />
-					<Event />
-					<Event />
+					{getPublicEventsLoading && (
+						<div className="d-flex justify-content-center">
+							<Spinner />
+						</div>
+					)}
+					{getPublicEventsData.length !== 0 &&
+						getPublicEventsData.map((item, key) => {
+							return <Event key={key} data={item} />;
+						})}
+					{!getPublicEventsLoading && getPublicEventsData.length === 0 && <img src={emptyImg} />}
 				</div>
 			</Main>
 			<div className="toggle-wrapper">
@@ -33,7 +53,11 @@ const Index = props => {
 };
 
 const mapStateToProps = state => {
-	return {};
+	return {
+		getRepositoryListData: state.Repository.getRepositoryList.data,
+		getPublicEventsLoading: state.Activity.getPublicEvents.loading,
+		getPublicEventsData: state.Activity.getPublicEvents.data,
+	};
 };
 
 const mapDispatchToProps = dispatch => {

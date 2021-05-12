@@ -52,10 +52,11 @@ export const Main = styled.div`
 	width: 100%;
 	//background-color: ${variables.colors.white};
 	border-radius: ${pxToRem(10)}rem;
-	height: auto;
 	padding: ${pxToRem(10)}rem;
 	margin-left: 0;
 	min-height: ${pxToRem(500)}rem;
+	height: 400px;
+	overflow: auto;
 
 	.public-events {
 		.public-event-card {
@@ -95,6 +96,7 @@ export const Main = styled.div`
 	@media (min-width: ${variables.breakPoints.laptop}px) {
 		width: ${pxToRem(600)}rem;
 		margin-left: ${pxToRem(15)}rem;
+    margin-right: ${pxToRem(15)}rem;
 
     .public-events {
 			margin-right: ${pxToRem(25)}rem;

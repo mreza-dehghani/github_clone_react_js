@@ -3,25 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="550a7884-7dc4-4681-931e-128dca2ef94d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/activity.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/activity.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/apis/activity.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/apis/activity.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constants/actionTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/actionTypes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/app/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/app/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/auth/login/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/auth/login/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/dashboard/components/activities/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/dashboard/components/activities/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/home/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/home/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layout/dashboard/components/avatar/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layout/dashboard/components/avatar/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layout/dashboard/components/footer/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layout/dashboard/components/footer/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layout/dashboard/components/header/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layout/dashboard/components/header/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layout/dashboard/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layout/dashboard/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layout/dashboard/style.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layout/dashboard/style.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layout/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layout/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layout/public/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layout/auth/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/activity.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/activity.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/router/private.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/private.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/router/public.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sagas/activity.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sagas/activity.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/home/private/components/event/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/home/private/components/event/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/home/private/components/leftSidebar/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/home/private/components/leftSidebar/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/home/private/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/home/private/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/home/private/style.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/home/private/style.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,7 +119,9 @@
       <workItem from="1620563996934" duration="188000" />
       <workItem from="1620638281686" duration="4644000" />
       <workItem from="1620709996110" duration="7000" />
-      <workItem from="1620735869144" duration="8903000" />
+      <workItem from="1620735869144" duration="8995000" />
+      <workItem from="1620765660470" duration="18000" />
+      <workItem from="1620804621117" duration="2053000" />
     </task>
     <servers />
   </component>
