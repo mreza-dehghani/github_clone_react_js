@@ -54,6 +54,13 @@ export const ButtonWrapper = styled.div`
 				color: ${variables.colors.LightSuccess};
 				border: 1px solid ${variables.colors.LightSuccess};
 			`;
+
+			default:
+				return `
+				background-color: ${variables.colors.white};
+				color: ${variables.colors.LightSuccess};
+				border: 1px solid ${variables.colors.LightSuccess};
+			`;
 		}
 	}};
 	opacity: ${props => (props.disabled ? '.5' : '1')};
@@ -78,6 +85,16 @@ export const ButtonWrapper = styled.div`
 					width: 134px;
 					height: 38px;
 				`;
+
+			default:
+				return `
+					padding: 10px 18px;
+					font-size: ${variables.fontSize.base};
+					font-weight: ${variables.fontWeight.semibold};
+					border-radius: 8px;
+					width: 134px;
+					height: 38px;
+				`;
 		}
 	}};
 	@media (min-width: 1024px) {
@@ -89,6 +106,12 @@ export const ButtonWrapper = styled.div`
 					height: 32px;
 				`;
 				case 'md':
+					return `
+					width: 161px;
+					height: 38px;
+				`;
+
+				default:
 					return `
 					width: 161px;
 					height: 38px;

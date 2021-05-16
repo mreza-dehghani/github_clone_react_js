@@ -43,7 +43,6 @@ export const clearRepositoryFilterByType = () => {
 };
 
 export const getRepository = postData => {
-	console.log(postData);
 	return {
 		type: types.GET_REPOSITORY_REQUEST,
 		postData,

@@ -1,4 +1,4 @@
-import { Formik, Form, Field } from 'formik';
+import { Formik, Form } from 'formik';
 import FormControl from '../../../../components/form/control';
 import initialValues from './initialValues';
 import validation from './validation';
