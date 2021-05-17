@@ -1,0 +1,2 @@
+(this.webpackJsonptest=this.webpackJsonptest||[]).push([[14],{273:function(t,s,e){"use strict";e.r(s);e(8),e(5);var n=e(2);s.default=function(){return Object(n.jsx)("div",{children:"pulls page"})}}}]);
+//# sourceMappingURL=14.83d7d7ec.chunk.js.map

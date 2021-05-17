@@ -1,0 +1,1 @@
+{"version":3,"sources":["containers/about/index.js"],"names":[],"mappings":"gHAAe,qBACd,OAAO","file":"static/js/7.84846b8f.chunk.js","sourcesContent":["export default () => {\r\n\treturn <div>about page...</div>;\r\n};\r\n"],"sourceRoot":""}

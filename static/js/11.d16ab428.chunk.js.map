@@ -1,0 +1,1 @@
+{"version":3,"sources":["containers/issues/index.js"],"names":[],"mappings":"2HAEe,qBACd,OAAO","file":"static/js/11.d16ab428.chunk.js","sourcesContent":["import {} from './style';\r\n\r\nexport default () => {\r\n\treturn <div>issues page</div>;\r\n};\r\n"],"sourceRoot":""}

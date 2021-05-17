@@ -1,0 +1,1 @@
+{"version":3,"sources":["containers/pulls/index.js"],"names":[],"mappings":"2HAEe,qBACd,OAAO","file":"static/js/13.41ce9fcf.chunk.js","sourcesContent":["import {} from './style';\r\n\r\nexport default () => {\r\n\treturn <div>pulls page</div>;\r\n};\r\n"],"sourceRoot":""}

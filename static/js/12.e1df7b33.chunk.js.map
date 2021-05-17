@@ -1,0 +1,1 @@
+{"version":3,"sources":["containers/marketPlace/index.js"],"names":[],"mappings":"2HAEe,qBACd,OAAO","file":"static/js/12.e1df7b33.chunk.js","sourcesContent":["import {} from './style';\r\n\r\nexport default () => {\r\n\treturn <div>marketplace page</div>;\r\n};\r\n"],"sourceRoot":""}
