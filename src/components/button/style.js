@@ -1,5 +1,20 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import variables from '../../constants/styleVariables';
+
+const RippleAnimation = keyframes`
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(10);
+    opacity: 0.375;
+  }
+  100% {
+    transform: scale(35);
+    opacity: 0;
+  }
+`;
 
 export const ButtonWrapper = styled.div`
 	cursor: pointer;
@@ -7,6 +22,8 @@ export const ButtonWrapper = styled.div`
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	overflow: hidden;
+	position: relative;
 
 	${props => {
 		switch (props.type) {
@@ -118,5 +135,16 @@ export const ButtonWrapper = styled.div`
 				`;
 			}
 		}};
+	}
+
+	.ripple-effect {
+		width: 20px;
+		height: 20px;
+		position: absolute;
+		background: #cdcdcd;
+		display: block;
+		border-radius: 9999px;
+		opacity: 1;
+		animation: 0.9s ease 1 forwards ${RippleAnimation};
 	}
 `;
